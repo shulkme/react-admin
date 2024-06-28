@@ -8,13 +8,6 @@ import type { RouteObjectType } from '@/router/types';
 import { isArray, pick, trim } from 'lodash';
 import React, { ComponentType, Suspense, lazy } from 'react';
 import { Navigate, Route, RouteObject } from 'react-router-dom';
-// import ProLayout from "@/layouts";
-// import Welcome from "@/pages/dashboards/personal/welcome";
-// import Ecommerce from "@/pages/dashboards/personal/ecommerce";
-// import Signup from "@/pages/auth/signup";
-// import Login from "@/pages/auth/login";
-// import ExceptionNotFound from "@/pages/exception/404";
-// import routes from "@/router/routes";
 
 // 动态页面组件
 const lazyPages = import.meta.glob([
@@ -102,44 +95,3 @@ export function generateRoutes(routes: RouteObjectType[]): RouteObject[] {
 // 不考虑远程路由，可以直接转换
 // const router = createBrowserRouter(generateRoutes(routes))
 // export default router
-
-// 测试路由
-// export const testRoutes: RouteObject[] = [
-//   {
-//     path: '/',
-//     element: <ProLayout />,
-//     children: [
-//       {
-//         path: 'dashboards',
-//         children: [
-//           {
-//             path: 'personal',
-//             children: [
-//               {
-//                 path: 'welcome',
-//                 element: <Welcome />
-//               },
-//               {
-//                 path: 'ecommerce',
-//                 element: <Ecommerce />
-//               }
-//             ]
-//           }
-//         ]
-//       }
-//     ]
-//   },
-//   {
-//     path: '/signup',
-//     element: <Signup />
-//   },
-//   {
-//     path: '/login',
-//     element: <Login />
-//   },
-//   {
-//     path: '*',
-//     element: <ExceptionNotFound />
-//   }
-// ]
-// export const testRouter = createBrowserRouter(testRoutes)

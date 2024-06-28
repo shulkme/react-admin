@@ -37,7 +37,7 @@ const Posts: React.FC = () => {
         <Row justify="space-between" align="middle">
           <Col>
             <Typography.Title level={4} style={{ margin: 0 }}>
-              1,234 items
+              {!loading && `Total ${pagination.total.toLocaleString()} items`}
             </Typography.Title>
           </Col>
           <Col>
@@ -85,7 +85,7 @@ const Posts: React.FC = () => {
             xl: 3,
             xxl: 4,
           }}
-          pagination={pagination}
+          pagination={{ ...pagination, showSizeChanger: false }}
           style={{
             margin: -12,
           }}

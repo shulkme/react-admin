@@ -90,7 +90,7 @@ export default function postMock(mocker: Mocker) {
         meta: {
           page: page,
           pageSize: size,
-          total: posts.length,
+          total: 1000, // 构造分页
           pageCount: pages,
         },
       },
