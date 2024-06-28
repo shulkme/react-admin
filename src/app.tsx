@@ -1,4 +1,5 @@
 import '@/assets/styles/global.css';
+import PageLoading from '@/components/page-loading';
 import theme from '@/config/theme';
 import { generateRoutes } from '@/router';
 import asyncRoutes from '@/router/routes';
@@ -19,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+      <RouterProvider router={router} fallbackElement={<PageLoading />} />
     </ThemeProvider>
   );
 };

@@ -1,6 +1,6 @@
 import useAccess from '@/hooks/access';
-import ExceptionForbidden from '@/pages/exception/403';
 import type React from 'react';
+import { Navigate } from 'react-router-dom';
 
 const PermissionRoute: React.FC<
   React.PropsWithChildren<{
@@ -9,7 +9,7 @@ const PermissionRoute: React.FC<
 > = ({ access, children }) => {
   const auth = useAccess();
   if (access && !auth?.[access]) {
-    return <ExceptionForbidden />;
+    return <Navigate to="/forbidden" />;
   }
   return children;
 };

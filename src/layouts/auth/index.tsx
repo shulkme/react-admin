@@ -1,7 +1,7 @@
 import bannerUrl from '@/assets/images/sso.jpg';
 import useStyles from '@/layouts/auth/styles';
 import { Avatar, Layout, Typography } from 'antd';
-import { ThemeProvider } from 'antd-style';
+import { ThemeProvider, useResponsive } from 'antd-style';
 import type React from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -11,6 +11,10 @@ const { Text } = Typography;
 
 const AuthLayout: React.FC = () => {
   const { styles, theme } = useStyles();
+
+  // 避免移动设备banner栏闪烁
+  const { laptop: showBanner } = useResponsive();
+
   return (
     <ThemeProvider
       theme={{
@@ -27,10 +31,10 @@ const AuthLayout: React.FC = () => {
         },
       }}
     >
-      <Layout className={styles.root}>
+      <Layout className={styles.root} hasSider={showBanner}>
         <Layout>
           <Header className={styles.header}>
-            <Avatar shape="square" />
+            <Avatar shape="square" src="/favicon.png" />
           </Header>
           <Content className={styles.content}>
             <div className={styles.container}>

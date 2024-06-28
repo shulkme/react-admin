@@ -42,7 +42,7 @@ const routes: RouteObjectType[] = [
                 path: 'blog',
                 fullPath: '/dashboards/blog',
                 component: '/pages/dashboards/blog',
-                // access: 'pages.dashboards.welcome',
+                // access: 'pages.dashboards.blog',
               },
               {
                 key: 'pages.dashboards.fashion',
@@ -467,6 +467,7 @@ const routes: RouteObjectType[] = [
   {
     key: 'auth',
     component: '/layouts/auth',
+    hideInMenu: true,
     children: [
       {
         path: LOGIN_ROUTE,
@@ -481,9 +482,26 @@ const routes: RouteObjectType[] = [
     ],
   },
   {
-    path: '*',
-    key: 'not-found',
-    component: '/pages/exception/404',
+    key: 'exception',
+    component: '/layouts/frame',
+    hideInMenu: true,
+    children: [
+      {
+        path: 'error',
+        key: 'exception.error',
+        component: '/pages/exception/500',
+      },
+      {
+        path: 'forbidden',
+        key: 'exception.forbidden',
+        component: '/pages/exception/403',
+      },
+      {
+        path: '*',
+        key: 'exception.not-found',
+        component: '/pages/exception/404',
+      },
+    ],
   },
 ];
 
