@@ -7,6 +7,8 @@
 
 基于React开箱即用的企业级中后台框架
 
+<img height="auto" src="./public/screenshot.png" width="100%"/>
+
 </div>
 
 

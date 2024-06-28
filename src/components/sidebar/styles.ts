@@ -21,6 +21,17 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
           max-height: 100%;
           overflow: auto;
           padding: ${token.paddingXS}px 0;
+          &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: ${token.colorFill};
+            border-radius: 4px;
+          }
         }
       }
 

@@ -15,6 +15,8 @@ const TrendAnalysisCard: React.FC = () => {
       ],
     },
     padding: 0,
+    paddingLeft: 12,
+    paddingBottom: 4,
     xField: (d: Record<string, string>) => new Date(d.date),
     yField: 'price',
     shapeField: 'smooth',

@@ -23,7 +23,7 @@ const Header: React.FC = () => {
           >
             <Col>
               <Space align="center">
-                <Avatar shape="square" />
+                <Avatar shape="square" src="/favicon.png" />
                 <Typography.Title
                   level={5}
                   style={{
