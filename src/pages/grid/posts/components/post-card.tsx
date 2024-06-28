@@ -1,5 +1,5 @@
 import Icon from '@/components/icon';
-import { PostRecord } from '@/pages/layouts/grid/posts/types.ts';
+import { PostRecord } from '@/pages/grid/posts/types';
 import { Button, Card, Image, Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import type React from 'react';

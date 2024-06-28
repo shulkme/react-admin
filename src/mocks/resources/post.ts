@@ -1,5 +1,5 @@
 import { Mocker } from '@/mocks';
-import { PostRecord } from '@/pages/layouts/grid/posts/types';
+import { PostRecord } from '@/pages/grid/posts/types';
 import { sampleSize } from 'lodash';
 
 const posts: PostRecord[] = [
