@@ -2,7 +2,7 @@
 
 <h1 >
     <span><img height="128" src="https://em-content.zobj.net/source/microsoft-teams/363/dolphin_1f42c.png" width="128"/></span><br>
-    <span>React ADMIN</span>
+    <span>React Admin</span>
 </h1>
 
 基于React开箱即用的企业级中后台框架

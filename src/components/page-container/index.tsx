@@ -55,7 +55,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
                 </Title>
               )}
               {props.description && (
-                <Paragraph type="secondary" style={{ margin: 0 }}>
+                <Paragraph type="secondary" style={{ margin: '1em 0 0' }}>
                   {props.description}
                 </Paragraph>
               )}

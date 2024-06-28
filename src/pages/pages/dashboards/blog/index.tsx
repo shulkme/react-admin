@@ -12,7 +12,7 @@ import UserGeographyCard from './components/user-geography-card';
 const Welcome: React.FC = () => {
   return (
     <PageContainer
-      title="Welcome back, Steve"
+      title="Welcome back, Shulk 👋🏻"
       description="Happy to see you again on your dashboard."
       extras={[
         <Button key="filter" type="default" icon={<Icon name="filter" />}>
