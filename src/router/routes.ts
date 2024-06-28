@@ -471,13 +471,18 @@ const routes: RouteObjectType[] = [
     children: [
       {
         path: LOGIN_ROUTE,
-        key: 'login',
+        key: 'auth.login',
         component: '/pages/auth/login',
       },
       {
         path: SIGNUP_ROUTE,
-        key: 'signup',
+        key: 'auth.signup',
         component: '/pages/auth/signup',
+      },
+      {
+        path: '/forgot-password',
+        key: 'auth.forgot-password',
+        component: '/pages/auth/forgot-password',
       },
     ],
   },
