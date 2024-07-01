@@ -61,6 +61,9 @@ $ pnpm dev
 |--------------------|---------|----------------------------------------------------------------------|------------|
 | axios-mock-adapter | 1.22.0  | [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) | 用于本地模拟接口请求 |
 | lucide-react       | 0.379.0 | [Lucide](https://lucide.dev/)                                        | 主要图标库      |
+| dnd-kit            | 6.1.0   | [dnd kit](https://dndkit.com/)                                       | 用于拖拽排序     |
+| @antv/larkmap      | 2.2.4   | [LarkMap](https://larkmap.antv.antgroup.com/)                        | 地图图表       |
+| @ant-design/plots  | 1.4.17  | [AntV](https://ant-design-charts.antgroup.com/)                      | 常用图表       |
 
 
 ## ❤️ 赞助
@@ -69,4 +72,4 @@ $ pnpm dev
 
 ## 👻 许可
 
-[MIT协议](LICENSE) 。
+[MIT协议](LICENSE)

@@ -135,6 +135,12 @@ const routes: RouteObjectType[] = [
             icon: 'gear-2-tones',
             path: 'settings',
             fullPath: '/settings',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Profile',
@@ -142,6 +148,12 @@ const routes: RouteObjectType[] = [
             icon: 'contacts-tones',
             path: 'profile',
             fullPath: '/profile',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Utility',
@@ -149,6 +161,12 @@ const routes: RouteObjectType[] = [
             icon: 'apps-tones',
             path: 'utility',
             fullPath: '/utility',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
         ],
       },
@@ -199,6 +217,12 @@ const routes: RouteObjectType[] = [
             key: 'layouts.list',
             icon: 'list-view-tones',
             path: 'list',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
             //fullPath: '/list',
           },
           {
@@ -206,6 +230,12 @@ const routes: RouteObjectType[] = [
             key: 'layouts.flex',
             icon: 'column-tones',
             path: 'flex',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
             //fullPath: '/layouts/flex',
           },
           {
@@ -301,6 +331,12 @@ const routes: RouteObjectType[] = [
             icon: 'mail-tones',
             path: 'email',
             fullPath: '/email',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Chat',
@@ -308,6 +344,12 @@ const routes: RouteObjectType[] = [
             icon: 'message-circle-2-tones',
             path: 'chat',
             fullPath: '/chat',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Projects',
@@ -315,6 +357,12 @@ const routes: RouteObjectType[] = [
             icon: 'box-tones',
             path: 'projects',
             fullPath: '/projects',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Tasks',
@@ -322,6 +370,12 @@ const routes: RouteObjectType[] = [
             icon: 'document-check-tones',
             path: 'tasks',
             fullPath: '/tasks',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Crypto',
@@ -329,6 +383,12 @@ const routes: RouteObjectType[] = [
             icon: 'wallet-tones',
             path: 'crypto',
             fullPath: '/crypto',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Invoices',
@@ -336,6 +396,12 @@ const routes: RouteObjectType[] = [
             icon: 'seal-tones',
             path: 'invoices',
             fullPath: '/invoices',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Medias',
@@ -343,6 +409,12 @@ const routes: RouteObjectType[] = [
             icon: 'file-box-tones',
             path: 'medias',
             fullPath: '/medias',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
         ],
       },
@@ -358,6 +430,12 @@ const routes: RouteObjectType[] = [
             icon: 'switch-button-tones',
             path: 'forms',
             fullPath: '/forms',
+            children: [
+              {
+                key: '',
+                name: '',
+              }
+            ]
           },
           {
             name: 'Charts',
