@@ -49,42 +49,42 @@ const routes: RouteObjectType[] = [
                 name: 'Fashion',
                 path: 'fashion',
                 fullPath: '/dashboards/fashion',
-                component: '/pages/dashboards/fashion',
+                component: '/pages/temp',
               },
               {
                 key: 'pages.dashboards.ecommerce',
                 name: 'Ecommerce',
                 path: 'ecommerce',
                 fullPath: '/dashboards/ecommerce',
-                component: '/pages/dashboards/ecommerce',
+                component: '/pages/temp',
               },
               {
                 key: 'pages.dashboards.team',
                 name: 'Team',
                 path: 'team',
                 fullPath: '/dashboards/team',
-                component: '/pages/dashboards/team',
+                component: '/pages/temp',
               },
               {
                 key: 'pages.dashboards.project',
                 name: 'Project',
                 path: 'project',
                 fullPath: '/dashboards/project',
-                component: '/pages/dashboards/project',
+                component: '/pages/temp',
               },
               {
                 key: 'pages.dashboards.todo',
                 name: 'Todo',
                 path: 'todo',
                 fullPath: '/dashboards/todo',
-                component: '/pages/dashboards/todo',
+                component: '/pages/temp',
               },
               {
                 key: 'pages.dashboards.crypto',
                 name: 'Crypto',
                 path: 'crypto',
                 fullPath: '/dashboards/crypto',
-                component: '/pages/dashboards/crypto',
+                component: '/pages/temp',
               },
             ],
           },
@@ -114,18 +114,21 @@ const routes: RouteObjectType[] = [
                 name: 'Roles',
                 path: 'roles',
                 fullPath: '/auth/roles',
+                component: '/pages/temp',
               },
               {
                 key: 'permissions',
                 name: 'Permissions',
                 path: 'permissions',
                 fullPath: '/auth/permissions',
+                component: '/pages/temp',
               },
               {
                 key: 'organization',
                 name: 'Organization',
                 path: 'organization',
                 fullPath: '/auth/organization',
+                component: '/pages/temp',
               },
             ],
           },
@@ -134,39 +137,143 @@ const routes: RouteObjectType[] = [
             key: 'pages.settings',
             icon: 'gear-2-tones',
             path: 'settings',
-            fullPath: '/settings',
             children: [
               {
-                key: '',
-                name: '',
-              }
-            ]
+                key: 'pages.settings.profile',
+                name: 'Profile',
+                path: 'profile',
+                fullPath: '/settings/profile',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.security',
+                name: 'Security',
+                path: 'security',
+                fullPath: '/settings/security',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.company',
+                name: 'Company',
+                path: 'company',
+                fullPath: '/settings/company',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.shop',
+                name: 'Shop',
+                path: 'shop',
+                fullPath: '/settings/shop',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.billing',
+                name: 'Billing',
+                path: 'billing',
+                fullPath: '/settings/billing',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.menus',
+                name: 'Menus',
+                path: 'menus',
+                fullPath: '/settings/menus',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.notifications',
+                name: 'Notifications',
+                path: 'notifications',
+                fullPath: '/settings/notifications',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.settings.system',
+                name: 'System',
+                path: 'system',
+                fullPath: '/settings/system',
+                component: '/pages/temp',
+              },
+            ],
           },
           {
             name: 'Profile',
             key: 'pages.profile',
             icon: 'contacts-tones',
             path: 'profile',
-            fullPath: '/profile',
             children: [
               {
-                key: '',
-                name: '',
-              }
-            ]
+                key: 'pages.profile.user',
+                name: 'User',
+                path: 'user',
+                fullPath: '/profile/user',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.profile.article',
+                name: 'Article',
+                path: 'article',
+                fullPath: '/profile/article',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.profile.task',
+                name: 'Task',
+                path: 'task',
+                fullPath: '/profile/task',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.profile.order',
+                name: 'Order',
+                path: 'order',
+                fullPath: '/profile/order',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.profile.plan',
+                name: 'Plan',
+                path: 'plan',
+                fullPath: '/profile/plan',
+                component: '/pages/temp',
+              },
+            ],
           },
           {
             name: 'Utility',
             key: 'pages.utility',
             icon: 'apps-tones',
             path: 'utility',
-            fullPath: '/utility',
             children: [
               {
-                key: '',
-                name: '',
-              }
-            ]
+                key: 'pages.utility.integrations',
+                name: 'Integrations',
+                path: 'integrations',
+                fullPath: '/utility/integrations',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.utility.appstore',
+                name: 'Appstore',
+                path: 'appstore',
+                fullPath: '/utility/appstore',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.utility.promotion',
+                name: 'Promotion',
+                path: 'promotion',
+                fullPath: '/utility/promotion',
+                component: '/pages/temp',
+              },
+              {
+                key: 'pages.utility.documents',
+                name: 'Documents',
+                path: 'documents',
+                fullPath: '/utility/documents',
+                component: '/pages/temp',
+              },
+            ],
           },
         ],
       },
@@ -213,30 +320,69 @@ const routes: RouteObjectType[] = [
             ],
           },
           {
+            name: 'Form',
+            key: 'layouts.form',
+            icon: 'text-field-tones',
+            path: 'form',
+            children: [
+              {
+                name: 'Profile',
+                key: 'layouts.form.profile',
+                path: 'profile',
+                fullPath: '/form/profile',
+                component: '/pages/temp',
+              },
+              {
+                name: 'Account',
+                key: 'layouts.form.account',
+                path: 'account',
+                fullPath: '/form/account',
+                component: '/pages/temp',
+              },
+              {
+                name: 'Company',
+                key: 'layouts.form.company',
+                path: 'company',
+                fullPath: '/form/company',
+                component: '/pages/temp',
+              },
+              {
+                name: 'Order',
+                key: 'layouts.form.order',
+                path: 'order',
+                fullPath: '/form/order',
+                component: '/pages/temp',
+              },
+            ],
+          },
+          {
             name: 'List',
             key: 'layouts.list',
             icon: 'list-view-tones',
             path: 'list',
             children: [
               {
-                key: '',
-                name: '',
-              }
-            ]
-            //fullPath: '/list',
-          },
-          {
-            name: 'Flex',
-            key: 'layouts.flex',
-            icon: 'column-tones',
-            path: 'flex',
-            children: [
+                name: 'Preview',
+                key: 'layouts.list.preview',
+                path: 'preview',
+                fullPath: '/list/preview',
+                component: '/pages/temp',
+              },
               {
-                key: '',
-                name: '',
-              }
-            ]
-            //fullPath: '/layouts/flex',
+                name: 'Action',
+                key: 'layouts.list.action',
+                path: 'action',
+                fullPath: '/list/action',
+                component: '/pages/temp',
+              },
+              {
+                name: 'Draggable',
+                key: 'layouts.list.draggable',
+                path: 'draggable',
+                fullPath: '/list/draggable',
+                component: '/pages/temp',
+              },
+            ],
           },
           {
             name: 'Grid',
@@ -331,12 +477,6 @@ const routes: RouteObjectType[] = [
             icon: 'mail-tones',
             path: 'email',
             fullPath: '/email',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Chat',
@@ -344,12 +484,6 @@ const routes: RouteObjectType[] = [
             icon: 'message-circle-2-tones',
             path: 'chat',
             fullPath: '/chat',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Projects',
@@ -357,12 +491,6 @@ const routes: RouteObjectType[] = [
             icon: 'box-tones',
             path: 'projects',
             fullPath: '/projects',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Tasks',
@@ -370,12 +498,6 @@ const routes: RouteObjectType[] = [
             icon: 'document-check-tones',
             path: 'tasks',
             fullPath: '/tasks',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Crypto',
@@ -383,12 +505,6 @@ const routes: RouteObjectType[] = [
             icon: 'wallet-tones',
             path: 'crypto',
             fullPath: '/crypto',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Invoices',
@@ -396,12 +512,6 @@ const routes: RouteObjectType[] = [
             icon: 'seal-tones',
             path: 'invoices',
             fullPath: '/invoices',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
           {
             name: 'Medias',
@@ -409,12 +519,6 @@ const routes: RouteObjectType[] = [
             icon: 'file-box-tones',
             path: 'medias',
             fullPath: '/medias',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
           },
         ],
       },
@@ -424,19 +528,6 @@ const routes: RouteObjectType[] = [
         name: 'Components',
         //path: 'components',
         children: [
-          {
-            name: 'Forms',
-            key: 'components.forms',
-            icon: 'switch-button-tones',
-            path: 'forms',
-            fullPath: '/forms',
-            children: [
-              {
-                key: '',
-                name: '',
-              }
-            ]
-          },
           {
             name: 'Charts',
             key: 'components.charts',
