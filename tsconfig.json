@@ -16,6 +16,7 @@
 
     /* Linting */
     "strict": true,
+    "noImplicitAny": false, // 允许隐式 `any` 类型
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,

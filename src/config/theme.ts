@@ -22,9 +22,9 @@ const theme: ThemeConfig = {
       onlyIconSizeSM: 16,
     },
     Input: {
-      inputFontSizeSM: 12,
-      inputFontSize: 14,
-      inputFontSizeLG: 16,
+      //inputFontSizeSM: 12,
+      //inputFontSize: 14,
+      //inputFontSizeLG: 16,
     },
     Layout: {
       headerHeight: 64,

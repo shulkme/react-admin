@@ -69,4 +69,4 @@ $ pnpm dev
 
 ## 👻 许可
 
-Whale Admin 遵循 [MIT协议](LICENSE) 。
+[MIT协议](LICENSE) 。
