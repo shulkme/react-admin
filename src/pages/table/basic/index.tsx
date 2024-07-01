@@ -1,5 +1,5 @@
 import { getUsers } from '@/apis/user';
-import { UserRecord } from '@/apis/user/types.ts';
+import { UserRecord } from '@/apis/user/types';
 import Icon from '@/components/icon';
 import PageContainer from '@/components/page-container';
 import { usePagination } from 'ahooks';
@@ -98,13 +98,32 @@ const BasicTable: React.FC = () => {
           body: {
             padding: 0,
           },
+          extra: {
+            flex: 1,
+          },
+          title: {
+            flex: 'none',
+            marginRight: 16,
+          },
         }}
-        title="Total 1,234 items"
+        title={`Total ${pagination.total.toLocaleString()} items`}
         extra={
-          <Space>
-            <Input placeholder="Search" prefix={<Icon name="search" />} />
-            <Button icon={<Icon name="download" />}>Export</Button>
-          </Space>
+          <Row justify="space-between" align="middle">
+            <Space>
+              {selectedRowKeys.length > 0 && (
+                <>
+                  <Button icon={<Icon name="folders" />}>Move to</Button>
+                  <Button icon={<Icon name="trash" />} danger>
+                    Delete
+                  </Button>
+                </>
+              )}
+            </Space>
+            <Space>
+              <Input placeholder="Search" prefix={<Icon name="search" />} />
+              <Button icon={<Icon name="download" />}>Export</Button>
+            </Space>
+          </Row>
         }
       >
         <Table<UserRecord>
@@ -126,7 +145,9 @@ const BasicTable: React.FC = () => {
         >
           <Col>
             <Typography.Text type="secondary">
-              Total 1,234 items , 100 selected
+              Total {pagination.total.toLocaleString()} items
+              {selectedRowKeys.length > 0 &&
+                ` , ${selectedRowKeys.length} items selected`}
             </Typography.Text>
           </Col>
           <Col>

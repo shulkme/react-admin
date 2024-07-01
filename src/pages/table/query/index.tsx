@@ -1,7 +1,8 @@
 import { getUsers } from '@/apis/user';
-import { UserRecord } from '@/apis/user/types.ts';
+import { UserRecord } from '@/apis/user/types';
 import Icon from '@/components/icon';
 import PageContainer from '@/components/page-container';
+import TableColumns from '@/components/table-columns';
 import { usePagination } from 'ahooks';
 import {
   Avatar,
@@ -17,6 +18,7 @@ import {
 } from 'antd';
 import { useTheme } from 'antd-style';
 import React, { useState } from 'react';
+import FilterForm from './components/filter-form';
 
 const columns: TableProps<UserRecord>['columns'] = [
   {
@@ -32,40 +34,29 @@ const columns: TableProps<UserRecord>['columns'] = [
     title: 'Name',
     key: 'nickname',
     dataIndex: 'nickname',
-    render: (value) => {
-      return <>{value}</>;
-    },
   },
   {
     title: 'Username',
     key: 'username',
     dataIndex: 'username',
-    render: (value) => {
-      return <>{value}</>;
-    },
   },
   {
     title: 'Email',
     key: 'email',
     dataIndex: 'email',
-    render: (value) => {
-      return <>{value}</>;
-    },
   },
   {
     title: 'Phone',
     key: 'phone',
     dataIndex: 'phone',
-    render: (value) => {
-      return <>{value}</>;
-    },
   },
   {
     title: 'Action',
     key: 'action',
     width: 90,
+    align: 'center',
     render: () => {
-      return <Button size="small">Edit</Button>;
+      return <Button type="link">Edit</Button>;
     },
   },
 ];
@@ -95,10 +86,19 @@ const QueryTable: React.FC = () => {
     <PageContainer
       size="large"
       title="Query Table"
-      description="The most common table function, usually used to display a simple list of content."
+      description="Used for merging queries of multiple fields in scenarios with known fields."
     >
       <Space direction="vertical" size="large" style={{ display: 'flex' }}>
-        <Card bordered={false}></Card>
+        <Card
+          bordered={false}
+          styles={{
+            body: {
+              paddingBlock: '32px 8px',
+            },
+          }}
+        >
+          <FilterForm />
+        </Card>
         <Card
           bordered={false}
           styles={{
@@ -108,13 +108,34 @@ const QueryTable: React.FC = () => {
             body: {
               padding: 0,
             },
+            extra: {
+              flex: 1,
+            },
+            title: {
+              flex: 'none',
+              marginRight: 16,
+            },
           }}
-          title="Total 1,234 items"
+          title={`Total ${pagination.total.toLocaleString()} items`}
           extra={
-            <Space>
-              <Button icon={<Icon name="download" />}>Export</Button>
-              <Button icon={<Icon name="settings-2" />}>Columns</Button>
-            </Space>
+            <Row justify="space-between" align="middle">
+              <Space>
+                {selectedRowKeys.length > 0 && (
+                  <>
+                    <Button icon={<Icon name="folders" />}>Move to</Button>
+                    <Button icon={<Icon name="trash" />} danger>
+                      Delete
+                    </Button>
+                  </>
+                )}
+              </Space>
+              <Space>
+                <Button icon={<Icon name="download" />}>Export</Button>
+                <TableColumns>
+                  <Button icon={<Icon name="settings-2" />}>Columns</Button>
+                </TableColumns>
+              </Space>
+            </Row>
           }
         >
           <Table<UserRecord>
@@ -136,7 +157,9 @@ const QueryTable: React.FC = () => {
           >
             <Col>
               <Typography.Text type="secondary">
-                Total 1,234 items , 100 selected
+                Total {pagination.total.toLocaleString()} items
+                {selectedRowKeys.length > 0 &&
+                  ` , ${selectedRowKeys.length} items selected`}
               </Typography.Text>
             </Col>
             <Col>
