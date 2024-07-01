@@ -172,11 +172,11 @@ const routes: RouteObjectType[] = [
                 component: '/pages/table/basic',
               },
               {
-                name: 'Group',
-                key: 'layouts.table.group',
-                path: 'group',
-                fullPath: '/table/group',
-                component: '/pages/table/group',
+                name: 'Query',
+                key: 'layouts.table.query',
+                path: 'query',
+                fullPath: '/table/query',
+                component: '/pages/table/query',
               },
               {
                 name: 'Drag',

@@ -17,6 +17,9 @@ const theme: ThemeConfig = {
       contentFontSizeSM: 12,
       contentFontSize: 14,
       contentFontSizeLG: 16,
+      onlyIconSize: 18,
+      onlyIconSizeLG: 20,
+      onlyIconSizeSM: 16,
     },
     Input: {
       inputFontSizeSM: 12,
@@ -25,6 +28,19 @@ const theme: ThemeConfig = {
     },
     Layout: {
       headerHeight: 64,
+    },
+    Table: {
+      // 一般存放于卡片中，所以默认参照卡片容器
+      headerBorderRadius: 0,
+      headerBg: 'transparent',
+      cellPaddingInlineSM: 16,
+      cellPaddingInline: 24,
+      cellPaddingInlineMD: 32,
+      selectionColumnWidth: 64,
+    },
+    Card: {
+      headerHeight: 64,
+      headerHeightSM: 40,
     },
   },
 };

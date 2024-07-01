@@ -45,7 +45,6 @@ const TrendAnalysisCard: React.FC = () => {
       style={{ height: '100%' }}
       extra={
         <Select
-          size="small"
           defaultValue={0}
           style={{ width: 120 }}
           options={[

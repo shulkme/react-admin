@@ -62,7 +62,6 @@ const TopPostsCard: React.FC = () => {
         components: {
           Table: {
             cellPaddingInlineSM: 24,
-            headerBg: 'transparent',
           },
         },
       }}
@@ -75,13 +74,14 @@ const TopPostsCard: React.FC = () => {
             margin: 0,
           },
           body: {
-            padding: 0,
+            paddingInline: 0,
+            paddingBlockStart: 0,
           },
         }}
         style={{ height: '100%' }}
       >
         <Table<PostRecord>
-          rowKey='id'
+          rowKey="id"
           loading={loading}
           dataSource={data}
           size="small"

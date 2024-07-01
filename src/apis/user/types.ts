@@ -8,9 +8,12 @@ import type { BaseRecord } from '@/apis/types';
  */
 
 export type UserRecord = BaseRecord<{
-  name: string;
   email: string;
   avatar: string;
+  username: string;
+  nickname: string;
+  gender?: string;
+  phone?: string;
   roles?: string | string[];
   permissions?: PermissionRecord[];
 }>;

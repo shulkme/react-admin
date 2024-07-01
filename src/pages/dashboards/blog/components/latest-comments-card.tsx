@@ -1,31 +1,13 @@
+import { getUsers } from '@/apis/user';
+import { UserRecord } from '@/apis/user/types';
 import { useRequest } from 'ahooks';
 import { Avatar, Button, Card, List } from 'antd';
 import React from 'react';
 
-type CommentRecord = {
-  email: string;
-  name: {
-    title: string;
-    first: string;
-    last: string;
-  };
-  nat: string;
-  picture: {
-    large: string;
-    medium: string;
-    thumbnail: string;
-  };
-};
-
 const LatestCommentsCard: React.FC = () => {
-  const fetchData = async (): Promise<CommentRecord[]> => {
-    return await fetch(
-      'https://randomuser.me/api/?results=6&inc=name,email,nat,picture&noinfo',
-    ).then((res) => res.json().then((res) => res.results));
-  };
-
-  const { loading, data } = useRequest(fetchData);
-
+  const { loading, data } = useRequest(getUsers, {
+    defaultParams: [{ pageSize: 7 }],
+  });
   return (
     <Card
       bordered={false}
@@ -37,15 +19,21 @@ const LatestCommentsCard: React.FC = () => {
       }}
       extra={<a>View More</a>}
     >
-      <List<CommentRecord>
-        size='large'
+      <List<UserRecord>
+        size="large"
         loading={loading}
-        dataSource={data}
+        dataSource={data?.data || []}
         renderItem={(record) => (
-          <List.Item actions={[<Button size='small' key="reply">Reply</Button>]}>
+          <List.Item
+            actions={[
+              <Button size="small" key="reply">
+                Reply
+              </Button>,
+            ]}
+          >
             <List.Item.Meta
-              avatar={<Avatar src={record.picture.thumbnail} />}
-              title={[record.name.first, record.name.last].join(' ')}
+              avatar={<Avatar src={record.avatar} />}
+              title={record.nickname}
               description={record.email}
             />
           </List.Item>

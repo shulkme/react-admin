@@ -2,13 +2,18 @@ import type { UserRecord } from '@/apis/user/types';
 import type { RouteObjectType } from '@/router/types';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-interface UserState extends Omit<UserRecord, 'id'> {
+interface UserState
+  extends Pick<
+    UserRecord,
+    'username' | 'nickname' | 'email' | 'avatar' | 'roles' | 'permissions'
+  > {
   loading: boolean;
   routes?: RouteObjectType[]; // 可选，用于从远程获取用户路由
 }
 
 const initialState: UserState = {
-  name: '',
+  username: '',
+  nickname: '',
   email: '',
   avatar: '',
   roles: '',
