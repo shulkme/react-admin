@@ -85,15 +85,15 @@ const FilterTable: React.FC = () => {
   return (
     <PageContainer
       size="large"
-      title="Segments Table"
-      description="Used for merging queries of multiple fields in scenarios with known fields."
+      title="Segment Table"
+      description="Save multi condition queries as segments for easy tracking and analysis of queries, such as user profiles."
     >
       <Space direction="vertical" size="large" style={{ display: 'flex' }}>
         <Card
           bordered={false}
           styles={{
             body: {
-              paddingBlock: '32px 8px',
+              paddingBlockEnd: 12,
             },
           }}
         >

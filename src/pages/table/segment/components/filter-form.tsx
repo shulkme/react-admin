@@ -1,21 +1,49 @@
 import Icon from '@/components/icon';
-import { Button, Collapse, Space, Typography } from 'antd';
+import {
+  Button,
+  Col,
+  Collapse,
+  Divider,
+  Form,
+  Row,
+  Space,
+  Typography,
+} from 'antd';
 import { ThemeProvider } from 'antd-style';
 import type React from 'react';
 
 const LabelDom: React.FC = () => {
   return (
-    <Typography.Paragraph strong style={{ margin: 0 }}>
-      Total 1,234 | Ratio 10%
-    </Typography.Paragraph>
+    <Space split={<Divider type="vertical" />}>
+      <Typography.Paragraph strong style={{ margin: 0 }}>
+        1,234 users
+      </Typography.Paragraph>
+      <Typography.Paragraph strong style={{ margin: 0 }}>
+        10% of your user base
+      </Typography.Paragraph>
+    </Space>
   );
 };
 
-const ExtraDom = () => {
+const FilterContainer = () => {
   return (
-    <Space>
-      <Button type="text" icon={<Icon name="circle-help" />} size="small" />
-    </Space>
+    <Form size="small">
+      <div style={{
+        background: '#fafafa',
+        height: 100
+      }}>
+
+      </div>
+      <Row justify="end">
+        <Col>
+          <Space>
+            <Button type="link">Save Segment</Button>
+            <Button>Discard</Button>
+            <Button type="primary">Apply</Button>
+          </Space>
+        </Col>
+      </Row>
+    </Form>
   );
 };
 
@@ -26,6 +54,7 @@ const FilterForm: React.FC = () => {
         components: {
           Collapse: {
             headerPadding: 0,
+            contentPadding: 0,
           },
         },
       }}
@@ -43,13 +72,10 @@ const FilterForm: React.FC = () => {
             }
           />
         )}
-        defaultActiveKey="filter"
         items={[
           {
-            key: 'filter',
             label: <LabelDom />,
-            children: <></>,
-            extra: <ExtraDom />,
+            children: <FilterContainer />,
           },
         ]}
       />

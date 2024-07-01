@@ -13,6 +13,7 @@ import {
   Space,
   Table,
   TableProps,
+  Tooltip,
   Typography,
 } from 'antd';
 import { useTheme } from 'antd-style';
@@ -84,8 +85,8 @@ const TabsTable: React.FC = () => {
   return (
     <PageContainer
       size="large"
-      title="Tabs Table"
-      description="Used for merging queries of multiple fields in scenarios with known fields."
+      title="View Table"
+      description="Save commonly used queries as views for further filtering."
     >
       <Card
         bordered={false}
@@ -122,7 +123,11 @@ const TabsTable: React.FC = () => {
             key: 'archived',
           },
           {
-            label: <Icon name="plus" />,
+            label: (
+              <Tooltip title="Create View">
+                <Icon name="plus" />
+              </Tooltip>
+            ),
             key: 'add',
           },
         ]}
