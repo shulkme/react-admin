@@ -1,7 +1,7 @@
+import request from '@/apis';
 import authMock from '@/mocks/resources/auth';
 import postMock from '@/mocks/resources/post';
 import userMock from '@/mocks/resources/user';
-import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 // 封装模拟器，便于注册
@@ -13,14 +13,14 @@ export class Mocker extends MockAdapter {
 }
 
 // 初始化模拟器
-const mocker = new Mocker(axios, {
+const mocker = new Mocker(request, {
   delayResponse: 1000, // 延时
 });
 
 // 仅在开发模式注册
-//if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   // 注册模拟器
   mocker.mock(authMock).mock(userMock).mock(postMock);
-//}
+}
 
 export default mocker;
