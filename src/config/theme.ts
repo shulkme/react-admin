@@ -2,6 +2,7 @@ import type { ThemeConfig } from 'antd';
 
 const theme: ThemeConfig = {
   token: {
+    colorPrimary: '#2464F1',
     colorBgLayout: '#e4ebf1',
     // borderRadius: 6,
     // borderRadiusLG: 8,

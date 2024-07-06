@@ -51,7 +51,7 @@ const FilterContainer = () => {
                       <Col flex="auto">
                         <Row
                           style={{
-                            border: `1px solid ${theme.colorBorder}`,
+                            border: `1px dashed ${theme.colorBorder}`,
                             borderRadius: theme.borderRadiusSM + 'px',
                           }}
                         >
@@ -102,6 +102,22 @@ const FilterContainer = () => {
                                     label: 'Not Equal',
                                     value: 'not_equal',
                                   },
+                                  {
+                                    label: 'Greater Than',
+                                    value: 'greater_than',
+                                  },
+                                  {
+                                    label: 'Less Than',
+                                    value: 'less_than',
+                                  },
+                                  {
+                                    label: 'Include',
+                                    value: 'include',
+                                  },
+                                  {
+                                    label: 'Exclude',
+                                    value: 'exclude',
+                                  },
                                 ]}
                               />
                             </Form.Item>
@@ -114,33 +130,34 @@ const FilterContainer = () => {
                         </Row>
                       </Col>
                       <Col flex="70px">
-                        {key < fields.length - 1 && (
-                          <Form.Item {...resetField} name={[name, 'relation']}>
-                            <Select
-                              placeholder="Relation"
-                              defaultValue="and"
-                              labelRender={({ label }) => (
-                                <span
-                                  style={{
-                                    color: theme.colorWarning,
-                                  }}
-                                >
-                                  {label}
-                                </span>
-                              )}
-                              options={[
-                                {
-                                  label: 'AND',
-                                  value: 'and',
-                                },
-                                {
-                                  label: 'OR',
-                                  value: 'or',
-                                },
-                              ]}
-                            />
-                          </Form.Item>
-                        )}
+                        <Form.Item {...resetField} name={[name, 'relation']}>
+                          <Select
+                            placeholder="Relation"
+                            defaultValue="and"
+                            suffixIcon={null}
+                            labelRender={({ label }) => (
+                              <span
+                                style={{
+                                  color: theme.colorWarning,
+                                  textAlign: 'center',
+                                  display: 'block',
+                                }}
+                              >
+                                {label}
+                              </span>
+                            )}
+                            options={[
+                              {
+                                label: 'AND',
+                                value: 'and',
+                              },
+                              {
+                                label: 'OR',
+                                value: 'or',
+                              },
+                            ]}
+                          />
+                        </Form.Item>
                       </Col>
                     </Row>
                   </Col>
