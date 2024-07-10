@@ -232,10 +232,10 @@ export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
 [vite-shield]: https://img.shields.io/badge/-Vite-2464F1?style=for-the-badge&logo=vite&logoColor=white&labelColor=black
 
 [react-router-link]: https://reactrouter.com/en/main
-[react-router-shield]: https://img.shields.io/badge/-React%2520Router-2464F1?style=for-the-badge&logo=react-router&logoColor=white&labelColor=black
+[react-router-shield]: https://img.shields.io/badge/-Router-2464F1?style=for-the-badge&logo=react-router&logoColor=white&labelColor=black
 
 [react-redux-link]: https://cn.redux.js.org/
-[react-redux-shield]: https://img.shields.io/badge/-React%2520Redux-2464F1?style=for-the-badge&logo=redux&logoColor=white&labelColor=black
+[react-redux-shield]: https://img.shields.io/badge/-Redux-2464F1?style=for-the-badge&logo=redux&logoColor=white&labelColor=black
 
 [axios-link]: https://axios-http.com/zh/
 [axios-shield]: https://img.shields.io/badge/-Axios-2464F1?style=for-the-badge&logo=axios&logoColor=white&labelColor=black
