@@ -11,6 +11,9 @@
 
 基于React开箱即用的企业级中后台框架
 
+[![][react-shield]][react-link] [![][typescript-shield]][typescript-link] [![][vite-shield]][vite-link] [![][ant-design-shield]][ant-design-link] [![][react-redux-shield]][react-redux-link] [![][react-router-shield]][react-router-link] [![][axios-shield]][axios-link] [![][lodash-shield]][lodash-link]
+
+
 <img height="auto" src="./public/screenshot.png" width="100%"/>
 
 </div>
@@ -214,3 +217,28 @@ export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
 ## 👻 许可
 
 [MIT协议](LICENSE)
+
+
+[react-link]: https://react.dev/
+[react-shield]: https://img.shields.io/badge/-React-2464F1?style=for-the-badge&logo=react&logoColor=white&labelColor=black
+
+[ant-design-link]: https://ant.design
+[ant-design-shield]: https://img.shields.io/badge/-Ant%20Design-2464F1?labelColor=black&logo=antdesign&style=for-the-badge
+
+[typescript-link]: https://www.typescriptlang.org/zh/
+[typescript-shield]: https://img.shields.io/badge/-Typescript-2464F1?style=for-the-badge&logo=typescript&logoColor=white&labelColor=black
+
+[vite-link]: https://cn.vitejs.dev/
+[vite-shield]: https://img.shields.io/badge/-Vite-2464F1?style=for-the-badge&logo=vite&logoColor=white&labelColor=black
+
+[react-router-link]: https://reactrouter.com/en/main
+[react-router-shield]: https://img.shields.io/badge/-React%2520Router-2464F1?style=for-the-badge&logo=react-router&logoColor=white&labelColor=black
+
+[react-redux-link]: https://cn.redux.js.org/
+[react-redux-shield]: https://img.shields.io/badge/-React%2520Redux-2464F1?style=for-the-badge&logo=redux&logoColor=white&labelColor=black
+
+[axios-link]: https://axios-http.com/zh/
+[axios-shield]: https://img.shields.io/badge/-Axios-2464F1?style=for-the-badge&logo=axios&logoColor=white&labelColor=black
+
+[lodash-link]: https://www.lodashjs.com/
+[lodash-shield]: https://img.shields.io/badge/-Lodash-2464F1?style=for-the-badge&logo=lodash&logoColor=white&labelColor=black
