@@ -1,3 +1,7 @@
+> \[!WARNING]
+>
+> 部分组件及页面尚未完成，不建议应用于生产环境
+
 <div align="center">
 
 <h1 >
@@ -115,7 +119,6 @@ $ pnpm dev
 | Sidebar         | 侧边栏  |
 | TableColumns    | 表格列项 |
 
-
 ### 图标库
 图标库是最常见的组件，常见的应用程序中，图标用法有三种：
 
@@ -199,9 +202,14 @@ export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
 | @ant-design/plots  | 1.4.17  | [AntV](https://ant-design-charts.antgroup.com/)                      | 常用图表       |
 
 
-## ❤️ 赞助
+## 🖥 浏览器兼容性
 
-暂无
+
+| [![edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/) | [![Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](http://godban.github.io/browsers-support-badges/) | [![chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](http://godban.github.io/browsers-support-badges/) | [![safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)](http://godban.github.io/browsers-support-badges/) | [![electron_48x48](https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png)](http://godban.github.io/browsers-support-badges/) |
+| --- | --- |---------------------------------------------------------------------------------------------------------------------------------------------------------| --- | --- |
+| Edge | 最近 2 个版本 | 最近 2 个版本                                                                                                                                                | 最近 2 个版本 | 最近 2 个版本 |
+
+<br/>
 
 ## 👻 许可
 
