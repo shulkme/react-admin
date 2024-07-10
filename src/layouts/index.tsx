@@ -1,7 +1,6 @@
 import { getProfile } from '@/apis/user';
 import Header from '@/components/header';
 import PageLoading from '@/components/page-loading';
-import NProgressBar from '@/components/progress-bar';
 import Sidebar from '@/components/sidebar';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { LOGIN_ROUTE } from '@/router/routes';
@@ -59,7 +58,6 @@ const ProLayout: React.FC = () => {
         },
       }}
     >
-      <NProgressBar />
       <Layout
         style={{
           minHeight: '100vh',

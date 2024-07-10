@@ -43,6 +43,10 @@ const theme: ThemeConfig = {
       headerHeight: 64,
       headerHeightSM: 40,
     },
+    Skeleton: {
+      controlHeightXS: 16,
+      controlHeightSM: 18
+    }
   },
 };
 

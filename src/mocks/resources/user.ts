@@ -62,7 +62,7 @@ export default function userMock(mocker: Mocker) {
           data: {
             nickname: 'Shulk Steve',
             username: 'shulk',
-            avatar: 'https://api.shulk.space/uploads/03_079775e077.png',
+            avatar: 'https://i.pravatar.cc/128?img=47',
             email: 'shulk.work@gmail.com',
             roles: 'user',
             permissions: [
