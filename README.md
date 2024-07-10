@@ -31,7 +31,7 @@ $ pnpm dev
 ## 🥳 文档
 
 ### 项目结构
-本项目基于常见的中后台开发框架，并以此为开发规范，该规范仅用于组织代码，并发强制性要求，可根据需要调整结构。
+项目结构基于常见的中后台开发框架，并以此为开发规范，该规范仅用于组织代码，非强制性要求，可根据需要调整结构。
 ```bash
 ├── public                  # 公开目录
 │   └── faviocn.png         # Favicon
@@ -61,49 +61,109 @@ $ pnpm dev
 ```
 
 ### 路由
-本项目基于[React Router V6](https://reactrouter.com/en/main)实现路由功能，为实现复杂的业务需求，基于路由表routes.ts动态生成路由，若只需简单路由，可重写router.tsx，并按照[React Router V6](https://reactrouter.com/en/main)文档构建路由器。
+本项目基于[React Router V6](https://reactrouter.com/en/main)构建路由，通过路由表routes.ts配置动态生成路由，可满足大部分应用场景，当然，若只需简单路由，可重写router.tsx，并按照[React Router V6](https://reactrouter.com/en/main)文档构建路由器即可。
 
-路由约定：
-
-- `/pages/**/index.tsx` 页面组件
-- `/pages/**/loading.tsx` 页面占位组件
-- `/layouts/**/index.tsx` 布局组件
-- `/layouts/**/loading.tsx` 布局占位组件
-
-路由特性：
-
-- 支持远程路由，通过远程加载路由表动态生成路由
-- 支持权限路由，支持根据用户角色、权限组、私有菜单动态渲染路由
-- 支持动态组件，页面组件通过`React.load()`加载，且可以添加占位组件loading.tsx，类似next.js的[Routing](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
-
-路由选项：
-
-| 选项         | 类型       | 必填 | 说明                |
-|------------|----------|----|-------------------|
-| key        | string   | 是  | 路由唯一标识            |
-| name       | string   | 否  | 页面名称或翻译key        |
-| icon       | string   | 否  | 图标名称              |
-| hideInMenu | boolean  | 否  | 是否在菜单中隐藏          |
-| access     | string   | 否  | 路由权限点             |
-| component  | string   | 否  | 路由组件路径            |
-| path       | string   | 否  | 路由地址，支持嵌套、动态、相对路由 |
-| fullPath   | string   | 否  | 完整路由地址，用于菜单导航     |
-| index      | boolean  | 否  | 缺省路由，默认显示当前路由     |
-| type       | 'group'  | 否  | 路由类型，目前用于菜单类型渲染   |
-| children   | Array    | 否  | 子路由               |
-| redirect   | string   | 否  | 重定向路由，自动跳转        |
-
+1. 路由约定：
+   - `/pages/**/index.tsx` 页面组件
+   - `/pages/**/loading.tsx` 页面占位组件
+   - `/layouts/**/index.tsx` 布局组件
+   - `/layouts/**/loading.tsx` 布局占位组件
+2. 路由特性：
+   - 支持远程路由，通过远程加载路由表动态生成路由
+   - 支持权限路由，支持根据用户角色、权限组、私有菜单动态渲染路由
+   - 支持动态组件，页面组件通过`React.lazy()`加载，且可以添加占位组件loading.tsx，类似next.js的[Routing](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)模式，对复杂页面，优化视觉过渡
+3. 路由选项：
+    
+    | 选项         | 类型       | 必填 | 说明                |
+    |------------|----------|----|-------------------|
+    | key        | string   | 是  | 路由唯一标识            |
+    | name       | string   | 否  | 页面名称或翻译key        |
+    | icon       | string   | 否  | 图标名称              |
+    | hideInMenu | boolean  | 否  | 是否在菜单中隐藏          |
+    | access     | string   | 否  | 路由权限点             |
+    | component  | string   | 否  | 路由组件路径            |
+    | path       | string   | 否  | 路由地址，支持嵌套、动态、相对路由 |
+    | fullPath   | string   | 否  | 完整路由地址，用于菜单导航     |
+    | index      | boolean  | 否  | 缺省路由，默认显示当前路由     |
+    | type       | 'group'  | 否  | 路由类型，目前用于菜单类型渲染   |
+    | children   | Array    | 否  | 子路由               |
+    | redirect   | string   | 否  | 重定向路由，自动跳转        |
 
 ### 配置
-### 布局
+主要放置一些构建时配置，采用硬编码模式，例如Ant Design的主题配置 `theme.ts`
+
 ### 页面
-### 组件
-### 图标
+约定：页面组件必须放在 `/src/pages/` 底下，可嵌套多级目录，但必须以 `index.tsx` 命名，如果需要加载反馈，则在同级目录底下添加 `loading.tsx` 文件，系统会自动加载，需要注意的时，页面组件都是懒加载，避免首屏加载耗时问题。
+
+### 布局
+约定：通用布局组件放在 `/src/layouts/` 目录中，本质上和页面组件类似，只不过布局组件通常需要包含 `<Outlet />` 组件用于路由嵌套，命名及其它用法和页面组件一致。
+
+小技巧：对于私有布局组件，可直接使用页面组件，并添加 `<Outlet />` 组件用于嵌套页面，例如：采用Tabs切换的局部内容~
+
+### 通用组件
+封装通用组件用于减少页面间耦合，目前通用组件如下：
+
+| 组件名             | 用途   |
+|-----------------|------|
+| Access          | 权限校验 |
+| Header          | 顶部导航 |
+| Icon            | 图标组件 |
+| PageContainer   | 页面容器 |
+| PageLoading     | 页面加载 |
+| PermissionRoute | 权限路由 |
+| ProgressBar     | 进度条  |
+| Sidebar         | 侧边栏  |
+| TableColumns    | 表格列项 |
+
+
+### 图标库
+图标库是最常见的组件，常见的应用程序中，图标用法有三种：
+
+1. `动态图标库` 通过服务端获取图标，本地包含全部的图标组件，通过服务端指定图标加载，如：自定义菜单
+2. `静态图标库` 本地图标文件，业务明确，图标引用随功能更新而更新
+3. `复合图标库` 部分本地+不确定的远程图标
+
+本项目采用 `复合图标库` 作为示例，本地图标库用于侧边栏菜单，动态图标库通常引用第三方图标库，项目使用 `lucide-react` 作为主要图标库。
+封装了图标组件 `<Icon name="xxx"/>` ，动态加载本地图标目录 `/src/icons` 及第三方图标库，所有图标均为按需加载。
+
+
 ### 状态管理
-### 请求
+
+基于 `Redux Toolkit`， 目前只有用户信息共享。
+
+
+### 接口请求
+项目基于 `axios` 封装带有队列控制的请求服务 `request`，防止重复请求，避免资源过载。
+
+建议：通用接口放在 `/src/apis/` 目录，业务层接口放在 `/src/pages/**/service.ts` 。
+
+示例：
+
+```typescript
+/**
+ * 获取用户列表
+ */
+export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
+  return request.get('/users', {
+    params,
+  });
+}
+```
+
 ### 国际化
+并非所有的后台应用都需要国际化，添加国际化功能比去掉要来的容易一些，因此，本项目只有在示例页面及全局组件应用国际化，其它页面可以参考示例页面自行实现。
+
+1. 添加国际化 `待完善`
+   
+2. 移除国际化 `待完善`
+
 ### Mock
 
+项目基于Axios实现接口服务，在本地开发中，使用 [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) 拦截和模拟请求，具体使用方式参考 [官方文档](https://github.com/ctimmerm/axios-mock-adapter) 。
+
+> Q: 为什么不使用mock.js ？
+> 
+> A: mock.js已经不再维护，而且不支持HTTP条件请求，如异常请求、响应格式化等，若简单的数据模拟也是不错的选择
 
 ## 🌈 依赖
 
