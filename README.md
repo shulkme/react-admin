@@ -11,7 +11,7 @@
 
 基于React开箱即用的企业级中后台框架
 
-[![][react-shield]][react-link] [![][typescript-shield]][typescript-link] [![][vite-shield]][vite-link] [![][ant-design-shield]][ant-design-link] [![][react-redux-shield]][react-redux-link] [![][react-router-shield]][react-router-link] [![][axios-shield]][axios-link] [![][lodash-shield]][lodash-link]
+[![][react-shield]][react-link] [![][vite-shield]][vite-link] [![][typescript-shield]][typescript-link] [![][react-router-shield]][react-router-link] [![][ant-design-shield]][ant-design-link] [![][react-redux-shield]][react-redux-link] [![][lodash-shield]][lodash-link] [![][axios-shield]][axios-link]
 
 
 <img height="auto" src="./public/screenshot.png" width="100%"/>
@@ -220,25 +220,25 @@ export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
 
 
 [react-link]: https://react.dev/
-[react-shield]: https://img.shields.io/badge/-React-2464F1?style=flat-square&logo=react&logoColor=white&labelColor=black
+[react-shield]: https://img.shields.io/badge/-React-05A5D1?style=flat-square&logo=react&logoColor=white&labelColor=black
 
 [ant-design-link]: https://ant.design
-[ant-design-shield]: https://img.shields.io/badge/-Ant%20Design-2464F1?labelColor=black&logo=antdesign&style=flat-square
+[ant-design-shield]: https://img.shields.io/badge/-Ant%20Design-1677ff?labelColor=black&logo=antdesign&style=flat-square
 
 [typescript-link]: https://www.typescriptlang.org/zh/
-[typescript-shield]: https://img.shields.io/badge/-Typescript-2464F1?style=flat-square&logo=typescript&logoColor=white&labelColor=black
+[typescript-shield]: https://img.shields.io/badge/-Typescript-007ACC?style=flat-square&logo=typescript&logoColor=white&labelColor=black
 
 [vite-link]: https://cn.vitejs.dev/
-[vite-shield]: https://img.shields.io/badge/-Vite-2464F1?style=flat-square&logo=vite&logoColor=white&labelColor=black
+[vite-shield]: https://img.shields.io/badge/-Vite-FFC21A?style=flat-square&logo=vite&logoColor=white&labelColor=black
 
 [react-router-link]: https://reactrouter.com/en/main
-[react-router-shield]: https://img.shields.io/badge/-Router-2464F1?style=flat-square&logo=react-router&logoColor=white&labelColor=black
+[react-router-shield]: https://img.shields.io/badge/-Router-F54250?style=flat-square&logo=react-router&logoColor=white&labelColor=black
 
 [react-redux-link]: https://cn.redux.js.org/
-[react-redux-shield]: https://img.shields.io/badge/-Redux-2464F1?style=flat-square&logo=redux&logoColor=white&labelColor=black
+[react-redux-shield]: https://img.shields.io/badge/-Redux-764ABC?style=flat-square&logo=redux&logoColor=white&labelColor=black
 
 [axios-link]: https://axios-http.com/zh/
-[axios-shield]: https://img.shields.io/badge/-Axios-2464F1?style=flat-square&logo=axios&logoColor=white&labelColor=black
+[axios-shield]: https://img.shields.io/badge/-Axios-671DDF?style=flat-square&logo=axios&logoColor=white&labelColor=black
 
 [lodash-link]: https://www.lodashjs.com/
-[lodash-shield]: https://img.shields.io/badge/-Lodash-2464F1?style=flat-square&logo=lodash&logoColor=white&labelColor=black
+[lodash-shield]: https://img.shields.io/badge/-Lodash-3491FE?style=flat-square&logo=lodash&logoColor=white&labelColor=black
