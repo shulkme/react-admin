@@ -223,7 +223,7 @@ export function getUsers(params?: PageParams): Promise<PageResult<UserRecord>> {
 [react-shield]: https://img.shields.io/badge/-React-05A5D1?style=flat-square&logo=react&logoColor=white&labelColor=black
 
 [ant-design-link]: https://ant.design
-[ant-design-shield]: https://img.shields.io/badge/-Ant%20Design-1677ff?labelColor=black&logo=antdesign&style=flat-square
+[ant-design-shield]: https://img.shields.io/badge/-Ant%20Design-1677ff?labelColor=black&logo=antdesign&logoColor=white&style=flat-square
 
 [typescript-link]: https://www.typescriptlang.org/zh/
 [typescript-shield]: https://img.shields.io/badge/-Typescript-007ACC?style=flat-square&logo=typescript&logoColor=white&labelColor=black

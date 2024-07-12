@@ -2,7 +2,6 @@ import { getUsers } from '@/apis/user';
 import { UserRecord } from '@/apis/user/types';
 import Icon from '@/components/icon';
 import PageContainer from '@/components/page-container';
-import TableColumns from '@/components/table-columns';
 import { usePagination } from 'ahooks';
 import {
   Avatar,
@@ -131,9 +130,6 @@ const QueryTable: React.FC = () => {
               </Space>
               <Space>
                 <Button icon={<Icon name="download" />}>Export</Button>
-                <TableColumns>
-                  <Button icon={<Icon name="settings-2" />}>Columns</Button>
-                </TableColumns>
               </Space>
             </Row>
           }
