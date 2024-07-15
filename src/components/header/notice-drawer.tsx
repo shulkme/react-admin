@@ -1,17 +1,19 @@
 import Icon from '@/components/icon';
+import { useAppSelector } from '@/hooks/store.ts';
 import { useBoolean } from 'ahooks';
 import { Badge, Button, Drawer } from 'antd';
 import { ThemeProvider } from 'antd-style';
 import type React from 'react';
 
 const NoticeDrawer: React.FC = () => {
+  const { themeMode } = useAppSelector((state) => state.app);
   const [open, { setFalse, setTrue }] = useBoolean();
   return (
     <>
       <Badge dot>
         <Button type="text" icon={<Icon name="bell" />} onClick={setTrue} />
       </Badge>
-      <ThemeProvider themeMode="light">
+      <ThemeProvider themeMode={themeMode}>
         <Drawer
           title="Notifications"
           open={open}

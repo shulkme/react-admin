@@ -1,7 +1,7 @@
 import bannerUrl from '@/assets/images/sso.jpg';
 import useStyles from '@/layouts/auth/styles';
-import { Avatar, Layout, Typography } from 'antd';
-import { ThemeProvider, useResponsive } from 'antd-style';
+import { Avatar, ConfigProvider, Layout, Typography } from 'antd';
+import { useResponsive } from 'antd-style';
 import type React from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const AuthLayout: React.FC = () => {
   const { laptop: showBanner } = useResponsive();
 
   return (
-    <ThemeProvider
+    <ConfigProvider
       theme={{
         components: {
           Layout: {
@@ -61,7 +61,7 @@ const AuthLayout: React.FC = () => {
           />
         </Sider>
       </Layout>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 };
 

@@ -42,6 +42,7 @@ const items: MenuProps['items'] = [
 ];
 
 const AvatarDropdown: React.FC = () => {
+  const { themeMode } = useAppSelector((state) => state.app);
   const { avatar, loading } = useAppSelector((state) => state.user);
 
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const AvatarDropdown: React.FC = () => {
   };
 
   return (
-    <ThemeProvider themeMode="light">
+    <ThemeProvider themeMode={themeMode}>
       <Dropdown
         placement="bottomRight"
         trigger={['click']}

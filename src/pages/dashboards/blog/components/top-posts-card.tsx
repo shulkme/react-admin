@@ -1,6 +1,5 @@
 import { useRequest } from 'ahooks';
-import { Card, Table, TableProps, Typography } from 'antd';
-import { ThemeProvider } from 'antd-style';
+import { Card, ConfigProvider, Table, TableProps, Typography } from 'antd';
 import type React from 'react';
 
 type PostRecord = {
@@ -57,7 +56,7 @@ const TopPostsCard: React.FC = () => {
   const { loading, data } = useRequest(fetchData);
 
   return (
-    <ThemeProvider
+    <ConfigProvider
       theme={{
         components: {
           Table: {
@@ -90,7 +89,7 @@ const TopPostsCard: React.FC = () => {
           pagination={false}
         />
       </Card>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 };
 

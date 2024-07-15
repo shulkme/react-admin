@@ -16,9 +16,8 @@ import {
   ZoomControl,
 } from '@antv/larkmap';
 import { useRequest } from 'ahooks';
-import { Avatar, Card, Col, List, Row, Spin } from 'antd';
-import { ThemeProvider } from 'antd-style';
-import React, { useEffect } from 'react';
+import { Avatar, Card, Col, ConfigProvider, List, Row, Spin } from 'antd';
+import React from 'react';
 
 type AreaDataType = {
   name: string;
@@ -120,12 +119,8 @@ const UserGeographyCard: React.FC = () => {
 
   const { data, loading } = useRequest(fetchData);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
-    <ThemeProvider
+    <ConfigProvider
       theme={{
         components: {
           List: {
@@ -192,7 +187,7 @@ const UserGeographyCard: React.FC = () => {
           </Col>
         </Row>
       </Card>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 };
 

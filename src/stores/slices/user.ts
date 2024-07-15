@@ -38,6 +38,6 @@ const user = createSlice({
   },
 });
 
-export const { update: setUserInfo, reset: resetUserInfo } = user.actions;
+export const userActions = user.actions;
 
 export default user.reducer;

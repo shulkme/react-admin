@@ -25,8 +25,8 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS, Transform } from '@dnd-kit/utilities';
-import { Button, Checkbox, Col, Popover, Row } from 'antd';
-import { ThemeProvider, useTheme } from 'antd-style';
+import { Button, Checkbox, Col, ConfigProvider, Popover, Row } from 'antd';
+import { useTheme } from 'antd-style';
 import React, { forwardRef, HTMLAttributes, useState } from 'react';
 export interface CheckItemProps extends HTMLAttributes<HTMLDivElement> {
   attributes?: DraggableAttributes;
@@ -141,7 +141,7 @@ const CheckList: React.FC = () => {
     }
   };
   return (
-    <ThemeProvider
+    <ConfigProvider
       theme={{
         components: {
           Button: {
@@ -173,7 +173,7 @@ const CheckList: React.FC = () => {
           </DragOverlay>
         </Checkbox.Group>
       </DndContext>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 };
 

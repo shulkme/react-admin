@@ -4,10 +4,10 @@ import PageLoading from '@/components/page-loading';
 import Sidebar from '@/components/sidebar';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { LOGIN_ROUTE } from '@/router/routes';
-import { setUserInfo } from '@/stores/slices/user';
+import { userActions } from '@/stores/slices/user';
+import { useRequest } from 'ahooks';
 import { Layout } from 'antd';
-import { ThemeProvider } from 'antd-style';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 const ProLayout: React.FC = () => {
@@ -18,64 +18,48 @@ const ProLayout: React.FC = () => {
   const navigate = useNavigate();
 
   // 请求用户数据
-  function fetchUserData() {
-    dispatch(
-      setUserInfo({
-        loading: true,
-      }),
-    );
-    getProfile()
-      .then((data) => {
-        dispatch(
-          setUserInfo({
-            ...data.data,
-            loading: false,
-          }),
-        );
-      })
-      .catch(() => {
-        navigate(LOGIN_ROUTE);
-      });
-  }
-
-  // 授权初始化
-  useEffect(() => {
-    fetchUserData();
-  }, []);
+  useRequest(getProfile, {
+    onBefore: () => {
+      dispatch(
+        userActions.update({
+          loading: true,
+        }),
+      );
+    },
+    onSuccess: (data) => {
+      dispatch(
+        userActions.update({
+          ...data.data,
+          loading: false,
+        }),
+      );
+    },
+    onError: () => {
+      navigate(LOGIN_ROUTE);
+    },
+  });
 
   // 加载状态
   if (loading) return <PageLoading />;
 
   return (
-    <ThemeProvider
-      theme={{
-        components: {
-          Layout: {
-            headerBg: '#09121a',
-            headerColor: '#fff',
-            siderBg: '#fff',
-          },
-        },
+    <Layout
+      style={{
+        minHeight: '100vh',
       }}
     >
-      <Layout
-        style={{
-          minHeight: '100vh',
-        }}
-      >
-        <Header />
-        <Layout hasSider>
-          <Sidebar />
-          <Layout.Content
-            style={{
-              padding: 32,
-            }}
-          >
-            <Outlet />
-          </Layout.Content>
-        </Layout>
+      <Header />
+      <Layout hasSider>
+        <Sidebar />
+        <Layout.Content
+          style={{
+            padding: 32,
+          }}
+        >
+          <Outlet />
+        </Layout.Content>
       </Layout>
-    </ThemeProvider>
+    </Layout>
   );
 };
 

@@ -2,6 +2,7 @@ import Icon from '@/components/icon';
 import useStyles from '@/components/sidebar/styles';
 import useAccess from '@/hooks/access';
 import useMenu, { type MenuObject } from '@/hooks/menu';
+import { useAppSelector } from '@/hooks/store.ts';
 import asyncRoutes from '@/router/routes';
 import { Layout, Menu } from 'antd';
 import { ThemeProvider } from 'antd-style';
@@ -20,6 +21,7 @@ type MenuItemType = ItemType<{
 }>;
 
 const Sidebar: React.FC = () => {
+  const { themeMode } = useAppSelector((state) => state.app);
   const [collapsed, setCollapsed] = useState(false);
   const { styles } = useStyles();
   const access = useAccess();
@@ -76,6 +78,7 @@ const Sidebar: React.FC = () => {
           },
         },
       }}
+      themeMode={themeMode}
     >
       <Sider
         collapsed={collapsed}

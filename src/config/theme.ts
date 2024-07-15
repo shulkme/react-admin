@@ -3,7 +3,6 @@ import type { ThemeConfig } from 'antd';
 const theme: ThemeConfig = {
   token: {
     colorPrimary: '#2464F1',
-    colorBgLayout: '#e4ebf1',
     borderRadiusXS: 2,
     borderRadiusSM: 4,
     borderRadius: 4,
@@ -26,9 +25,6 @@ const theme: ThemeConfig = {
       //inputFontSizeSM: 12,
       //inputFontSize: 14,
       //inputFontSizeLG: 16,
-    },
-    Layout: {
-      headerHeight: 64,
     },
     Table: {
       // 一般存放于卡片中，所以默认参照卡片容器

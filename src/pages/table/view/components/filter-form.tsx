@@ -2,6 +2,7 @@ import Icon from '@/components/icon';
 import {
   Button,
   Col,
+  ConfigProvider,
   Form,
   Input,
   Row,
@@ -9,7 +10,7 @@ import {
   SelectProps,
   Space,
 } from 'antd';
-import { ThemeProvider, useTheme } from 'antd-style';
+import { useTheme } from 'antd-style';
 import type React from 'react';
 
 const statusOptions: SelectProps['options'] = [
@@ -67,7 +68,7 @@ const countryOptions: SelectProps['options'] = [
 const FilterForm: React.FC = () => {
   const theme = useTheme();
   return (
-    <ThemeProvider
+    <ConfigProvider
       theme={{
         components: {
           Select: {
@@ -145,7 +146,7 @@ const FilterForm: React.FC = () => {
           </Space>
         </Space>
       </Form>
-    </ThemeProvider>
+    </ConfigProvider>
   );
 };
 

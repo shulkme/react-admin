@@ -4,8 +4,7 @@
  * @link https://ant-design-charts-next.antgroup.com/zh/examples/statistics/pie/#basic-donut
  */
 import { Pie, PieConfig } from '@ant-design/plots';
-import { Badge, Card, Col, List, Row } from 'antd';
-import { ThemeProvider } from 'antd-style';
+import { Badge, Card, Col, ConfigProvider, List, Row } from 'antd';
 import type React from 'react';
 
 const PieChart: React.FC = () => {
@@ -59,7 +58,7 @@ const DeviceRatioCard: React.FC = () => {
     <Card bordered={false} title="Divice Ratio" style={{ height: '100%' }}>
       <Row gutter={[16, 24]}>
         <Col xs={6} lg={8} xxl={24}>
-          <ThemeProvider
+          <ConfigProvider
             theme={{
               components: {
                 List: {
@@ -91,7 +90,7 @@ const DeviceRatioCard: React.FC = () => {
                 />
               </List.Item>
             </List>
-          </ThemeProvider>
+          </ConfigProvider>
         </Col>
         <Col xs={18} lg={16} xxl={24}>
           <PieChart />
