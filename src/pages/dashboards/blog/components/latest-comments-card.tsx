@@ -6,7 +6,7 @@ import React from 'react';
 
 const LatestCommentsCard: React.FC = () => {
   const { loading, data } = useRequest(getUsers, {
-    defaultParams: [{ pageSize: 7 }],
+    defaultParams: [{ pageSize: 6 }],
   });
   return (
     <Card

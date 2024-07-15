@@ -4,10 +4,10 @@ const theme: ThemeConfig = {
   token: {
     colorPrimary: '#2464F1',
     colorBgLayout: '#e4ebf1',
-    // borderRadius: 6,
-    // borderRadiusLG: 8,
-    // borderRadiusXS: 2,
-    // borderRadiusSM: 4,
+    borderRadiusXS: 2,
+    borderRadiusSM: 4,
+    borderRadius: 4,
+    borderRadiusLG: 6,
     controlHeightXS: 24,
     controlHeightSM: 28,
     controlHeight: 36,
@@ -42,11 +42,13 @@ const theme: ThemeConfig = {
     Card: {
       headerHeight: 64,
       headerHeightSM: 40,
+      headerFontSize: 18,
+      headerFontSizeSM: 16,
     },
     Skeleton: {
       controlHeightXS: 16,
-      controlHeightSM: 18
-    }
+      controlHeightSM: 18,
+    },
   },
 };
 
