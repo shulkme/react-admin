@@ -253,11 +253,11 @@ const routes: RouteObjectType[] = [
                 component: '/pages/utility/integrations',
               },
               {
-                key: 'pages.utility.appstore',
-                name: 'Appstore',
-                path: 'appstore',
-                fullPath: '/utility/appstore',
-                component: '/pages/temp',
+                key: 'pages.utility.apps',
+                name: 'Apps',
+                path: 'apps',
+                fullPath: '/utility/apps',
+                component: '/pages/utility/apps',
               },
               {
                 key: 'pages.utility.promotion',

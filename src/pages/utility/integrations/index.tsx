@@ -100,6 +100,7 @@ const Integrations: React.FC = () => {
       size="middle"
       extras={[
         <Button
+          key="primary"
           icon={<Icon name="square-arrow-out-up-right" />}
           iconPosition="end"
           type="primary"
@@ -109,7 +110,11 @@ const Integrations: React.FC = () => {
       ]}
     >
       <Space direction="vertical" size="large" style={{ display: 'flex' }}>
-        <Card title="Use API" styles={{ body: { padding: 0 } }}>
+        <Card
+          bordered={false}
+          title="Use API"
+          styles={{ body: { padding: 0 } }}
+        >
           <List<IntegrationType>
             size="large"
             dataSource={[
@@ -144,7 +149,11 @@ const Integrations: React.FC = () => {
             renderItem={(record, index) => <Item key={index} {...record} />}
           />
         </Card>
-        <Card title="Featured integrations" styles={{ body: { padding: 0 } }}>
+        <Card
+          bordered={false}
+          title="Featured integrations"
+          styles={{ body: { padding: 0 } }}
+        >
           <List<IntegrationType>
             size="large"
             dataSource={items}

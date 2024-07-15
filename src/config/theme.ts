@@ -47,7 +47,7 @@ const theme: ThemeConfig = {
     },
     Skeleton: {
       controlHeightXS: 16,
-      controlHeightSM: 18,
+      //controlHeightSM: 18,
     },
   },
 };
