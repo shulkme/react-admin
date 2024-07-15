@@ -81,10 +81,9 @@ const InstalledList = () => {
 
   return (
     <List<AppType>
-      loading={loading}
       size="large"
-      dataSource={data}
-      renderItem={(record, index) => <AppItem key={index} record={record} />}
+      dataSource={loading ? Array(5).fill({}) : data}
+      renderItem={(record, index) => <AppItem record={record} key={index} />}
     />
   );
 };
@@ -100,17 +99,11 @@ const RecommendList = () => {
 
   return (
     <Row gutter={[16, 16]}>
-      {loading
-        ? Array.from({ length: 6 }).map((_, index) => (
-            <Col key={index} xs={24} sm={24} md={12} lg={12} xl={8}>
-              <AppCard />
-            </Col>
-          ))
-        : data?.map((record, index) => (
-            <Col key={index} xs={24} sm={24} md={12} lg={12} xl={8}>
-              <AppCard record={record} />
-            </Col>
-          ))}
+      {(loading ? Array(6).fill(null) : data)?.map((record, index) => (
+        <Col key={index} xs={24} sm={24} md={12} lg={12} xl={8}>
+          <AppCard record={record} />
+        </Col>
+      ))}
     </Row>
   );
 };

@@ -40,7 +40,7 @@ const LanguageDropdown: React.FC = () => {
       >
         <div>
           <ThemeProvider themeMode="dark">
-            <Button ghost type="text" icon={<Icon name="languages" />} />
+            <Button type="text" icon={<Icon name="languages" />} />
           </ThemeProvider>
         </div>
       </Dropdown>

@@ -1,7 +1,8 @@
 import Icon from '@/components/icon';
 import { AppType } from '@/pages/utility/apps';
-import { Avatar, Button, Dropdown, List, Tooltip } from 'antd';
+import { Avatar, Button, Dropdown, List, Skeleton, Tooltip } from 'antd';
 import { css, cx } from 'antd-style';
+import { isEmpty } from 'lodash';
 import type React from 'react';
 
 const avatarClassName = cx(css`
@@ -64,8 +65,21 @@ const MoreButton: React.FC = () => {
 };
 
 const AppItem: React.FC<{
-  record: AppType;
+  record: AppType | null;
 }> = ({ record }) => {
+  if (isEmpty(record)) {
+    return (
+      <List.Item>
+        <Skeleton
+          avatar
+          active
+          paragraph={{ rows: 2, width: ['25%', '100%'] }}
+          title={false}
+        />
+      </List.Item>
+    );
+  }
+
   return (
     <List.Item actions={[<PinButton key="pin" />, <MoreButton key="more" />]}>
       <List.Item.Meta

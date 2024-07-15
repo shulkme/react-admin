@@ -14,7 +14,6 @@ const FullscreenButton: React.FC = () => {
   return (
     <Tooltip title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}>
       <Button
-        ghost
         type="text"
         icon={<Icon name={isFullscreen ? 'minimize' : 'maximize'} />}
         onClick={toggleFullscreen}
