@@ -1,5 +1,5 @@
 import Icon from '@/components/icon';
-import { AppType } from '@/pages/utility/apps';
+import { AppType } from '@/pages/utility/applications';
 import {
   Avatar,
   Button,

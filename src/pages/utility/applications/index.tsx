@@ -1,7 +1,7 @@
 import Icon from '@/components/icon';
 import PageContainer from '@/components/page-container';
-import AppCard from '@/pages/utility/apps/components/app-card.tsx';
-import AppItem from '@/pages/utility/apps/components/app-item.tsx';
+import AppCard from '@/pages/utility/applications/components/app-card.tsx';
+import AppItem from '@/pages/utility/applications/components/app-item.tsx';
 import { useRequest } from 'ahooks';
 import { Button, Card, Col, List, Row, Space } from 'antd';
 import type React from 'react';
@@ -112,7 +112,7 @@ const Apps: React.FC = () => {
   return (
     <PageContainer
       size="middle"
-      title="Apps"
+      title="Applications"
       extras={[
         <Button
           key="primary"

@@ -1,5 +1,5 @@
 import Icon from '@/components/icon';
-import { AppType } from '@/pages/utility/apps';
+import { AppType } from '@/pages/utility/applications';
 import { Avatar, Button, Dropdown, List, Skeleton, Tooltip } from 'antd';
 import { css, cx } from 'antd-style';
 import { isEmpty } from 'lodash';
