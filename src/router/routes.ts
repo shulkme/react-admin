@@ -540,6 +540,7 @@ const routes: RouteObjectType[] = [
             key: 'components.charts',
             icon: 'ranking-tones',
             path: 'charts',
+            component: '/pages/charts',
             children: [
               {
                 key: 'components.charts.antv',
