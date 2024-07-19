@@ -60,7 +60,7 @@ const columns: TableProps<UserRecord>['columns'] = [
     },
   },
 ];
-const TabsTable: React.FC = () => {
+const ViewTable: React.FC = () => {
   const theme = useTheme();
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const { data, loading, pagination } = usePagination(
@@ -171,4 +171,4 @@ const TabsTable: React.FC = () => {
   );
 };
 
-export default TabsTable;
+export default ViewTable;

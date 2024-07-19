@@ -576,6 +576,7 @@ const routes: RouteObjectType[] = [
             key: 'components.icons',
             icon: 'apps-3-tones',
             path: 'icons',
+            component: '/pages/icons',
             children: [
               {
                 key: 'components.icons.local',

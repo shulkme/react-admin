@@ -59,7 +59,7 @@ const columns: TableProps<UserRecord>['columns'] = [
     },
   },
 ];
-const FilterTable: React.FC = () => {
+const SegmentTable: React.FC = () => {
   const theme = useTheme();
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const { data, loading, pagination } = usePagination(
@@ -161,4 +161,4 @@ const FilterTable: React.FC = () => {
   );
 };
 
-export default FilterTable;
+export default SegmentTable;

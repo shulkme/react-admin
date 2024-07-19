@@ -25,7 +25,17 @@ const useStyles = createStyles(
       header: css`
         margin-bottom: ${token.marginXL}px;
       `,
-      container: css``
+      crumb: css`
+        margin-bottom: 1em;
+      `,
+      title: css`
+        margin-bottom: 1em;
+      `,
+      desc: css`
+        margin-bottom: 1em;
+      `,
+      tabs: css``,
+      container: css``,
     };
   },
 );

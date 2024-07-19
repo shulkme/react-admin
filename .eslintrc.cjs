@@ -14,5 +14,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-explicit-any': 'off', // 禁用 no-explicit-any 规则
   },
 }

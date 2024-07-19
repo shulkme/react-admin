@@ -40,9 +40,9 @@ const route2menu = (
 };
 
 // 扁平菜单
-const flattenMenus = (menus: MenuObject[]): MenuObject[] => {
+const flattenMenus = (menus: MenuObject[]): Omit<MenuObject, 'children'>[] => {
   return flatMap(menus, (menu) => {
-    if (menu.children) {
+    if (menu.children && isArray(menu.children)) {
       return [omit(menu, ['children']), ...flattenMenus(menu.children)];
     } else {
       return menu;
