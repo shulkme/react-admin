@@ -45,11 +45,11 @@ const routes: RouteObjectType[] = [
                 // access: 'pages.dashboards.blog',
               },
               {
-                key: 'pages.dashboards.fashion',
-                name: 'Fashion',
-                path: 'fashion',
-                fullPath: '/dashboards/fashion',
-                component: '/pages/temp',
+                key: 'pages.dashboards.marketing',
+                name: 'Marketing',
+                path: 'marketing',
+                fullPath: '/dashboards/marketing',
+                component: '/pages/dashboards/marketing',
               },
               {
                 key: 'pages.dashboards.ecommerce',

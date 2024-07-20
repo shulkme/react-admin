@@ -9,7 +9,7 @@ import TopPostsCard from './components/top-posts-card';
 import TrendAnalysisCard from './components/trend-analysis-card';
 import UserGeographyCard from './components/user-geography-card';
 
-const Welcome: React.FC = () => {
+const BlogDashboard: React.FC = () => {
   return (
     <PageContainer
       title="Welcome back, Shulk 👋🏻"
@@ -50,4 +50,4 @@ const Welcome: React.FC = () => {
   );
 };
 
-export default Welcome;
+export default BlogDashboard;
