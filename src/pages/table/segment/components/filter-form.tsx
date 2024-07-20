@@ -13,8 +13,37 @@ import {
   Space,
   Typography,
 } from 'antd';
-import { useTheme } from 'antd-style';
+import { createStyles } from 'antd-style';
 import type React from 'react';
+
+const useStyles = createStyles(({ css, token, prefixCls }) => {
+  return {
+    wrapper: css`
+      &.${prefixCls}-collapse-item {
+        & > .${prefixCls}-collapse-header {
+          align-items: center;
+          padding: ${token.padding}px ${token.paddingLG}px;
+          .${prefixCls}-collapse-expand-icon {
+            height: auto;
+          }
+        }
+        & > .${prefixCls}-collapse-content {
+          .${prefixCls}-collapse-content-box {
+            padding: 0;
+          }
+        }
+      }
+    `,
+    container: css`
+      background: ${token.colorFillQuaternary};
+      padding: ${token.paddingLG}px;
+      border-block: 1px solid ${token.colorBorderSecondary};
+    `,
+    footer: css`
+      padding: ${token.padding}px ${token.paddingLG}px;
+    `,
+  };
+});
 
 const LabelDom: React.FC = () => {
   return (
@@ -30,18 +59,10 @@ const LabelDom: React.FC = () => {
 };
 
 const FilterContainer = () => {
-  const theme = useTheme();
+  const { styles, theme } = useStyles();
   return (
     <Form size="small" layout="horizontal" variant="borderless">
-      <div
-        style={{
-          background: theme.colorFillQuaternary,
-          marginBlock: 16,
-          marginInline: -24,
-          padding: 24,
-          borderBlock: `1px solid ${theme.colorBorderSecondary}`,
-        }}
-      >
+      <div className={styles.container}>
         <Form.List name="rows">
           {(fields, operation) => (
             <Row gutter={[8, 12]}>
@@ -197,28 +218,27 @@ const FilterContainer = () => {
           )}
         </Form.List>
       </div>
-      <Row justify="end">
-        <Col>
-          <Space>
-            <Button type="link">Save Segment</Button>
-            <Button>Discard</Button>
-            <Button type="primary">Apply</Button>
-          </Space>
-        </Col>
-      </Row>
+      <div className={styles.footer}>
+        <Row justify="end">
+          <Col>
+            <Space>
+              <Button type="link">Save Segment</Button>
+              <Button>Discard</Button>
+              <Button type="primary">Apply</Button>
+            </Space>
+          </Col>
+        </Row>
+      </div>
     </Form>
   );
 };
 
 const FilterForm: React.FC = () => {
+  const { styles } = useStyles();
   return (
     <ConfigProvider
       theme={{
         components: {
-          Collapse: {
-            headerPadding: 0,
-            contentPadding: 0,
-          },
           Form: {
             itemMarginBottom: 0,
           },
@@ -226,12 +246,9 @@ const FilterForm: React.FC = () => {
       }}
     >
       <Collapse
-        bordered={false}
         expandIconPosition="end"
         collapsible="icon"
-        style={{
-          background: 'transparent',
-        }}
+        ghost
         expandIcon={({ isActive }) => (
           <Button
             size="small"
@@ -245,6 +262,7 @@ const FilterForm: React.FC = () => {
           {
             label: <LabelDom />,
             children: <FilterContainer />,
+            className: styles.wrapper,
           },
         ]}
       />
