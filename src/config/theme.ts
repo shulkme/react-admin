@@ -11,6 +11,7 @@ const theme: ThemeConfig = {
     controlHeightSM: 28,
     controlHeight: 36,
     controlHeightLG: 44,
+    // colorTextTertiary: 'rgba(0,0,0,0.65)',
   },
   components: {
     Button: {
