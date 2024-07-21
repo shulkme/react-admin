@@ -33,7 +33,6 @@ const Header: React.FC = () => {
               <Typography.Title
                 level={5}
                 style={{
-                  margin: 0,
                   whiteSpace: 'nowrap',
                   textTransform: 'uppercase',
                 }}

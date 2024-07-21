@@ -1,4 +1,4 @@
-import { Button, Card, Col, Image, Row, Typography } from 'antd';
+import { Button, Card, Col, Image, Row, Space, Typography } from 'antd';
 import type React from 'react';
 
 const AutomationCard: React.FC = () => {
@@ -6,16 +6,16 @@ const AutomationCard: React.FC = () => {
     <Card bordered={false}>
       <Row gutter={16} justify="space-between">
         <Col xs={24} sm={16} md={18} xl={16}>
-          <Typography>
-            <Typography.Title level={5} style={{ marginTop: 0 }}>
+          <Space direction="vertical">
+            <Typography.Title level={5}>
               Automate push activities
             </Typography.Title>
             <Typography.Paragraph type="secondary">
               Use automated prebuilt flow templates, including cart abandonment,
               welcome series, transaction emails, and more.
             </Typography.Paragraph>
-          </Typography>
-          <Button>Create an automation</Button>
+            <Button>Create an automation</Button>
+          </Space>
         </Col>
         <Col xs={24} sm={8} md={6} xl={8}>
           <Image

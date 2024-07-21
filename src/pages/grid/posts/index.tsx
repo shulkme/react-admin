@@ -36,7 +36,7 @@ const Posts: React.FC = () => {
       <Space direction="vertical" size="large" style={{ display: 'flex' }}>
         <Row justify="space-between" align="middle">
           <Col>
-            <Typography.Title level={4} style={{ margin: 0 }}>
+            <Typography.Title level={4}>
               {!loading && `Total ${pagination.total.toLocaleString()} items`}
             </Typography.Title>
           </Col>

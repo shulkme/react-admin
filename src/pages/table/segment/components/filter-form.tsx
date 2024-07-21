@@ -48,12 +48,8 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
 const LabelDom: React.FC = () => {
   return (
     <Space split={<Divider type="vertical" />}>
-      <Typography.Paragraph strong style={{ margin: 0 }}>
-        1,234 users
-      </Typography.Paragraph>
-      <Typography.Paragraph strong style={{ margin: 0 }}>
-        10% of your user base
-      </Typography.Paragraph>
+      <Typography.Paragraph strong>1,234 users</Typography.Paragraph>
+      <Typography.Paragraph strong>10% of your user base</Typography.Paragraph>
     </Space>
   );
 };

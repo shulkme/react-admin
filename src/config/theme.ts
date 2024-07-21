@@ -38,8 +38,8 @@ const theme: ThemeConfig = {
     Card: {
       headerHeight: 64,
       headerHeightSM: 40,
-      headerFontSize: 18,
-      headerFontSizeSM: 16,
+      headerFontSize: 16,
+      headerFontSizeSM: 14,
     },
     Skeleton: {
       controlHeightXS: 16,

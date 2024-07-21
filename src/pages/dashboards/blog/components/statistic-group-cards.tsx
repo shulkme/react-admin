@@ -61,12 +61,8 @@ const StatisticCard: React.FC<StatisticCardProps> = ({
       <Space direction="vertical" style={{ display: 'flex' }}>
         <Row align="middle">
           <Col flex="auto">
-            <Paragraph type="secondary" style={{ margin: 0 }}>
-              {props.label}
-            </Paragraph>
-            <Title level={2} style={{ margin: 0 }}>
-              {props.value.toLocaleString()}
-            </Title>
+            <Paragraph type="secondary">{props.label}</Paragraph>
+            <Title level={2}>{props.value.toLocaleString()}</Title>
           </Col>
           <Col flex="none">
             {props.trend && (

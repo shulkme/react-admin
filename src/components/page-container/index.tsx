@@ -54,19 +54,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
               justify="space-between"
               align="middle"
             >
-              <Col>
-                {props.title && (
-                  <Title
-                    level={3}
-                    style={{
-                      margin: 0,
-                      lineHeight: 1,
-                    }}
-                  >
-                    {props.title}
-                  </Title>
-                )}
-              </Col>
+              <Col>{props.title && <Title level={3}>{props.title}</Title>}</Col>
               <Col>
                 <Space size="middle" align="center">
                   {props.extras && props.extras.map((extra) => extra)}

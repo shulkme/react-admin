@@ -7,16 +7,12 @@ import {
   Avatar,
   Button,
   Card,
-  Col,
   Input,
-  Pagination,
   Row,
   Space,
   Table,
   TableProps,
-  Typography,
 } from 'antd';
-import { useTheme } from 'antd-style';
 import React, { useState } from 'react';
 
 const columns: TableProps<UserRecord>['columns'] = [
@@ -61,7 +57,6 @@ const columns: TableProps<UserRecord>['columns'] = [
 ];
 
 const BasicTable: React.FC = () => {
-  const theme = useTheme();
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const { data, loading, pagination } = usePagination(
     async ({ current, pageSize }) => {
@@ -74,7 +69,6 @@ const BasicTable: React.FC = () => {
   );
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
-    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
@@ -90,22 +84,8 @@ const BasicTable: React.FC = () => {
       description="The most common table function, usually used to display a simple list of content."
     >
       <Card
+        className="with-table"
         bordered={false}
-        styles={{
-          header: {
-            margin: 0,
-          },
-          body: {
-            padding: 0,
-          },
-          extra: {
-            flex: 1,
-          },
-          title: {
-            flex: 'none',
-            marginRight: 16,
-          },
-        }}
         title={`Total ${pagination.total.toLocaleString()} items`}
         extra={
           <Row justify="space-between" align="middle">
@@ -132,28 +112,8 @@ const BasicTable: React.FC = () => {
           rowKey="id"
           dataSource={data?.list}
           rowSelection={rowSelection}
-          pagination={false}
+          pagination={pagination}
         />
-        <Row
-          gutter={16}
-          align="middle"
-          justify="space-between"
-          style={{
-            paddingBlock: theme.padding,
-            paddingInline: theme.paddingLG,
-          }}
-        >
-          <Col>
-            <Typography.Text type="secondary">
-              Total {pagination.total.toLocaleString()} items
-              {selectedRowKeys.length > 0 &&
-                ` , ${selectedRowKeys.length} items selected`}
-            </Typography.Text>
-          </Col>
-          <Col>
-            <Pagination {...pagination} size="default" />
-          </Col>
-        </Row>
       </Card>
     </PageContainer>
   );

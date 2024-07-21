@@ -1,4 +1,4 @@
-import { Button, Card, Col, Image, Row, Typography } from 'antd';
+import { Button, Card, Col, Image, Row, Space, Typography } from 'antd';
 import type React from 'react';
 
 const CampaignCard: React.FC = () => {
@@ -6,16 +6,16 @@ const CampaignCard: React.FC = () => {
     <Card bordered={false}>
       <Row gutter={16} justify="space-between">
         <Col xs={24} sm={16} md={18} xl={16}>
-          <Typography>
-            <Typography.Title level={5} style={{ marginTop: 0 }}>
+          <Space direction="vertical">
+            <Typography.Title level={5}>
               Create multichannel marketing campaigns
             </Typography.Title>
             <Typography.Paragraph type="secondary">
               Promote discounts and sales, reach out to new customers, and
               feature new products to increase sales across channels
             </Typography.Paragraph>
-          </Typography>
-          <Button>Create campaign</Button>
+            <Button>Create campaign</Button>
+          </Space>
         </Col>
         <Col xs={24} sm={8} md={6} xl={8}>
           <Image

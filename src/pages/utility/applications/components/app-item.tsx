@@ -1,15 +1,8 @@
 import Icon from '@/components/icon';
 import { AppType } from '@/pages/utility/applications';
 import { Avatar, Button, Dropdown, List, Skeleton, Tooltip } from 'antd';
-import { css, cx } from 'antd-style';
 import { isEmpty } from 'lodash';
 import type React from 'react';
-
-const avatarClassName = cx(css`
-  > img {
-    object-fit: contain;
-  }
-`);
 
 const PinButton: React.FC = () => {
   return (
@@ -84,11 +77,7 @@ const AppItem: React.FC<{
     <List.Item actions={[<PinButton key="pin" />, <MoreButton key="more" />]}>
       <List.Item.Meta
         avatar={
-          <Avatar
-            shape="square"
-            src={record.icon}
-            className={avatarClassName}
-          />
+          <Avatar shape="square" src={record.icon} className="avatar-contain" />
         }
         title={record.name}
         description={record.desc}

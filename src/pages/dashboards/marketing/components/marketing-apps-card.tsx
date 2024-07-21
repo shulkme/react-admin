@@ -57,15 +57,11 @@ const MarketingAppsCard: React.FC = () => {
     >
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <Typography>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Marketing apps
-            </Title>
-            <Paragraph type="secondary" style={{ margin: 0 }}>
-              Increase sessions, engage shoppers, and promote products by adding
-              more marketing apps.
-            </Paragraph>
-          </Typography>
+          <Title level={5}>Marketing apps</Title>
+          <Paragraph type="secondary">
+            Increase sessions, engage shoppers, and promote products by adding
+            more marketing apps.
+          </Paragraph>
         </Col>
         {apps.map((app, index) => (
           <Col key={index} xs={24} sm={12} lg={8}>
@@ -80,12 +76,10 @@ const MarketingAppsCard: React.FC = () => {
             >
               <Space align="center">
                 <Avatar size={32} shape="square" src={app.icon} />
-                <Title level={5} style={{ margin: 0 }}>
-                  {app.name}
-                </Title>
+                <Title level={5}>{app.name}</Title>
               </Space>
               <Paragraph
-                style={{ marginTop: '0.5em' }}
+                style={{ marginBlock: '0.5em' }}
                 ellipsis={{ rows: 2 }}
                 type="secondary"
               >

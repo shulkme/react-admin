@@ -20,11 +20,7 @@ const columns: TableProps<PostRecord>['columns'] = [
     title: 'TITLE',
     dataIndex: 'title',
     render: (value) => {
-      return (
-        <Typography.Title level={5} style={{ margin: 0 }}>
-          {value}
-        </Typography.Title>
-      );
+      return <Typography.Title level={5}>{value}</Typography.Title>;
     },
   },
   {

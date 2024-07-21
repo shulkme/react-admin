@@ -134,24 +134,22 @@ const StepTabs: React.FC = () => {
             icon={record.finished && <Icon name="check" />}
             type={record.finished ? 'primary' : 'dashed'}
           />
-          <Title level={5} style={{ margin: 0 }}>
-            {record.title}
-          </Title>
+          <Title level={5}>{record.title}</Title>
         </Space>
       ),
       children: (
         <Row gutter={[32, 32]} justify="space-between">
           <Col xs={24} lg={16} xl={12}>
-            <Typography>
+            <Space direction="vertical" size="middle">
               <Paragraph>
                 {record.description} <Link>Learn more</Link>.
               </Paragraph>
-            </Typography>
-            {record.action && (
-              <Button type="primary" href={record.action.href}>
-                {record.action.text}
-              </Button>
-            )}
+              {record.action && (
+                <Button type="primary" href={record.action.href}>
+                  {record.action.text}
+                </Button>
+              )}
+            </Space>
           </Col>
           <Col xs={24} lg={8} xl={6}>
             <div style={{ marginBlockStart: -16 }}>
@@ -192,13 +190,11 @@ const StrategyGuideCard: React.FC = () => {
       }}
       title={
         <Typography>
-          <Title level={5} style={{ marginTop: 0 }}>
-            All-in-one marketing 🚀
-          </Title>
+          <Title level={5}>All-in-one marketing 🚀</Title>
           <Paragraph
             type="secondary"
             ellipsis={{ rows: 2 }}
-            style={{ margin: 0, whiteSpace: 'normal', paddingRight: 8 }}
+            style={{ whiteSpace: 'normal', paddingRight: 8 }}
           >
             Explore our multi-functional, one-stop marketing tool. Smoothly
             create different kinds of marketing campaigns, integrate 10 common
@@ -218,9 +214,7 @@ const StrategyGuideCard: React.FC = () => {
           {
             label: (
               <Space size="large">
-                <Paragraph strong style={{ margin: 0 }}>
-                  New merchant strategy
-                </Paragraph>
+                <Paragraph>New merchant strategy</Paragraph>
                 <Progress
                   steps={3}
                   percent={33}

@@ -16,9 +16,7 @@ const StatisticGroupCard: React.FC = () => {
       <Row gutter={[16, 16]}>
         <Col span={24}>
           <Space>
-            <Typography.Title level={5} style={{ margin: 0 }}>
-              Marketing Results
-            </Typography.Title>
+            <Typography.Title level={5}>Marketing Results</Typography.Title>
             <Typography.Text type="secondary">Last 30 days</Typography.Text>
           </Space>
         </Col>
