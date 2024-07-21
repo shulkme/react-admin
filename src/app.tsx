@@ -2,6 +2,7 @@ import '@/assets/styles/global.css';
 import PageLoading from '@/components/page-loading';
 import NProgressBar from '@/components/progress-bar';
 import theme from '@/config/theme';
+import { GlobalStyles } from '@/global';
 import { useAppSelector } from '@/hooks/store';
 import { generateRoutes } from '@/router';
 import asyncRoutes from '@/router/routes';
@@ -11,7 +12,7 @@ import React, { useMemo } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 interface AppToken {
-  headerHeight: number;
+  headerHeight: number; // 导航栏高度
 }
 
 declare module 'antd-style' {
@@ -37,7 +38,7 @@ const App: React.FC = () => {
       <ThemeProvider<AppToken>
         themeMode={themeMode}
         customToken={{
-          headerHeight: 64,
+          headerHeight: 64, // 导航栏高度
         }}
         theme={(appearance) => ({
           components: {
@@ -51,6 +52,7 @@ const App: React.FC = () => {
           },
         })}
       >
+        <GlobalStyles />
         <NProgressBar />
         <RouterProvider router={router} fallbackElement={<PageLoading />} />
       </ThemeProvider>

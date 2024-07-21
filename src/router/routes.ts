@@ -95,11 +95,11 @@ const routes: RouteObjectType[] = [
             path: 'settings',
             children: [
               {
-                key: 'pages.settings.profile',
-                name: 'Profile',
-                path: 'profile',
-                fullPath: '/settings/profile',
-                component: '/pages/temp',
+                key: 'pages.settings.account',
+                name: 'Account',
+                path: 'account',
+                fullPath: '/settings/account',
+                component: '/pages/settings/account',
               },
               {
                 key: 'pages.settings.security',
