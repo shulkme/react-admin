@@ -48,9 +48,7 @@ const AccountPage: React.FC = () => {
                 <Row align="middle">
                   <Col flex="auto">
                     <Paragraph strong>Current login account</Paragraph>
-                    <Paragraph type="secondary">
-                      displayname@example.com
-                    </Paragraph>
+                    <Paragraph type="secondary">username@example.com</Paragraph>
                   </Col>
                   <Col flex="none">
                     <Space>
@@ -100,7 +98,7 @@ const AccountPage: React.FC = () => {
                         }
                         title={
                           <span>
-                            You have connected to 1992633964@qq.com login
+                            You have connected to username@example.com login
                             service
                           </span>
                         }
