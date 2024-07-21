@@ -1,5 +1,5 @@
 import Icon from '@/components/icon';
-import { useAppSelector } from '@/hooks/store.ts';
+import { useAppSelector } from '@/hooks/store';
 import { Button, Dropdown, MenuProps } from 'antd';
 import { ThemeProvider } from 'antd-style';
 import type React from 'react';

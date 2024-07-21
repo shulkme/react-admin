@@ -5,7 +5,6 @@ import {
   Col,
   Collapse,
   CollapseProps,
-  ConfigProvider,
   Image,
   Progress,
   Row,
@@ -181,92 +180,79 @@ const StepTabs: React.FC = () => {
 const StrategyGuideCard: React.FC = () => {
   const { styles, theme } = useStyles();
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Button: {
-            controlHeightSM: theme.controlHeightXS,
-          },
+    <Card
+      styles={{
+        header: {
+          fontWeight: 'unset',
+          paddingBlock: theme.padding,
+        },
+        body: {
+          padding: 0,
         },
       }}
+      title={
+        <Typography>
+          <Title level={5} style={{ marginTop: 0 }}>
+            All-in-one marketing 🚀
+          </Title>
+          <Paragraph
+            type="secondary"
+            ellipsis={{ rows: 2 }}
+            style={{ margin: 0, whiteSpace: 'normal', paddingRight: 8 }}
+          >
+            Explore our multi-functional, one-stop marketing tool. Smoothly
+            create different kinds of marketing campaigns, integrate 10 common
+            solutions, and handle common marketing bottlenecks.
+          </Paragraph>
+        </Typography>
+      }
+      extra={<Button>Use Now</Button>}
+      bordered={false}
     >
-      <Card
-        styles={{
-          header: {
-            fontWeight: 'unset',
-            paddingBlock: theme.padding,
-          },
-          body: {
-            padding: 0,
-          },
-        }}
-        title={
-          <Typography>
-            <Title level={5} style={{ marginTop: 0 }}>
-              All-in-one marketing 🚀
-            </Title>
-            <Paragraph
-              type="secondary"
-              ellipsis={{ rows: 2 }}
-              style={{ margin: 0, whiteSpace: 'normal', paddingRight: 8 }}
-            >
-              Explore our multi-functional, one-stop marketing tool. Smoothly
-              create different kinds of marketing campaigns, integrate 10 common
-              solutions, and handle common marketing bottlenecks.
-            </Paragraph>
-          </Typography>
-        }
-        extra={<Button>Use Now</Button>}
-        bordered={false}
-      >
-        <Collapse
-          ghost
-          expandIconPosition="end"
-          collapsible="icon"
-          defaultActiveKey="root"
-          items={[
-            {
-              label: (
-                <Space size="large">
-                  <Paragraph strong style={{ margin: 0 }}>
-                    New merchant strategy
-                  </Paragraph>
-                  <Progress
-                    steps={3}
-                    percent={33}
-                    format={(percent) =>
-                      `${Math.ceil(((percent || 1) / 100) * 3)} / 3`
-                    }
-                  />
-                </Space>
-              ),
-              key: 'root',
-              children: <StepTabs />,
-              extra: (
-                <Button
-                  size="small"
-                  type="text"
-                  icon={<Icon name="ellipsis" size={16} />}
+      <Collapse
+        ghost
+        expandIconPosition="end"
+        collapsible="icon"
+        defaultActiveKey="root"
+        items={[
+          {
+            label: (
+              <Space size="large">
+                <Paragraph strong style={{ margin: 0 }}>
+                  New merchant strategy
+                </Paragraph>
+                <Progress
+                  steps={3}
+                  percent={33}
+                  format={(percent) =>
+                    `${Math.ceil(((percent || 1) / 100) * 3)} / 3`
+                  }
                 />
-              ),
-              className: styles.root,
-            },
-          ]}
-          expandIcon={({ isActive }) => (
-            <Button
-              size="small"
-              type="text"
-              icon={
-                <Icon
-                  name={isActive ? 'chevron-up' : 'chevron-down'}
-                  size={16}
-                />
-              }
-            />
-          )}
-        />
-      </Card>
-    </ConfigProvider>
+              </Space>
+            ),
+            key: 'root',
+            children: <StepTabs />,
+            extra: (
+              <Button
+                size="small"
+                type="text"
+                icon={<Icon name="ellipsis" size={16} />}
+              />
+            ),
+            className: styles.root,
+          },
+        ]}
+        expandIcon={({ isActive }) => (
+          <Button
+            size="small"
+            type="text"
+            icon={
+              <Icon name={isActive ? 'chevron-up' : 'chevron-down'} size={16} />
+            }
+          />
+        )}
+      />
+    </Card>
   );
 };
 

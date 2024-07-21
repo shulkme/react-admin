@@ -12,54 +12,57 @@ import type React from 'react';
 const Header: React.FC = () => {
   const { styles } = useStyles();
   return (
-    <>
-      <ThemeProvider themeMode="dark">
-        <Layout.Header className={styles.ghost} />
-        <Layout.Header className={styles.root}>
-          <Row
-            justify="space-between"
-            align="middle"
-            wrap={false}
-            gutter={16}
-            style={{ fontSize: 0, lineHeight: 1, verticalAlign: 'middle' }}
+    <ThemeProvider themeMode="dark">
+      <Layout.Header className={styles.ghost} />
+      <Layout.Header className={styles.root}>
+        <Row
+          justify="space-between"
+          align="middle"
+          wrap={false}
+          gutter={16}
+          style={{
+            fontSize: 0,
+            lineHeight: 1,
+            verticalAlign: 'middle',
+            height: '100%',
+          }}
+        >
+          <Col>
+            <Space align="center">
+              <Avatar shape="square" src="/favicon.png" />
+              <Typography.Title
+                level={5}
+                style={{
+                  margin: 0,
+                  whiteSpace: 'nowrap',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {import.meta.env.VITE_APP_NAME}
+              </Typography.Title>
+            </Space>
+          </Col>
+          <Col
+            style={{
+              maxWidth: 520,
+              width: '100%',
+            }}
           >
-            <Col>
-              <Space align="center">
-                <Avatar shape="square" src="/favicon.png" />
-                <Typography.Title
-                  level={5}
-                  style={{
-                    margin: 0,
-                    whiteSpace: 'nowrap',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {import.meta.env.VITE_APP_NAME}
-                </Typography.Title>
-              </Space>
-            </Col>
-            <Col
-              style={{
-                maxWidth: 520,
-                width: '100%',
-              }}
-            >
-              <SearchBar />
-            </Col>
-            <Col>
-              <Space align="center" size="middle">
-                <LanguageDropdown />
-                <ThemeModeButton />
-                <FullscreenButton />
-                <NoticeDrawer />
-                <span />
-                <AvatarDropdown />
-              </Space>
-            </Col>
-          </Row>
-        </Layout.Header>
-      </ThemeProvider>
-    </>
+            <SearchBar />
+          </Col>
+          <Col>
+            <Space align="center" size="middle">
+              <LanguageDropdown />
+              <ThemeModeButton />
+              <FullscreenButton />
+              <NoticeDrawer />
+              <span />
+              <AvatarDropdown />
+            </Space>
+          </Col>
+        </Row>
+      </Layout.Header>
+    </ThemeProvider>
   );
 };
 

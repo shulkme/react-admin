@@ -6,8 +6,10 @@ import { ThemeProvider } from 'antd-style';
 import type React from 'react';
 
 const NoticeDrawer: React.FC = () => {
-  const { themeMode } = useAppSelector((state) => state.app);
   const [open, { setFalse, setTrue }] = useBoolean();
+
+  const { themeMode } = useAppSelector((state) => state.app);
+
   return (
     <>
       <Badge dot>
