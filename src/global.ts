@@ -63,5 +63,14 @@ export const GlobalStyles = createGlobalStyle(({ theme }) => {
         padding-inline: ${theme.paddingLG}px;
       }
     }
+
+    .${prefix}-alert.${prefix}-alert-with-description {
+      .${prefix}-alert-icon {
+        margin-block: 3px;
+      }
+      .${prefix}-alert-message {
+        font-weight: 600;
+      }
+    }
   `;
 });

@@ -1,3 +1,8 @@
+// +---------------------------------
+// | Ant Design 主题token配置
+// | 要实现灵活的主题配置，还需配合`./src/global.ts`进行深度定制
+// +---------------------------------
+
 import type { ThemeConfig } from 'antd';
 
 const theme: ThemeConfig = {
@@ -45,6 +50,11 @@ const theme: ThemeConfig = {
     Skeleton: {
       controlHeightXS: 16,
       //controlHeightSM: 18,
+    },
+    Alert: {
+      withDescriptionIconSize: 14,
+      withDescriptionPadding: '8px 12px',
+      fontSizeLG: 14,
     },
   },
 };
