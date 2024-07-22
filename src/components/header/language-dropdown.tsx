@@ -1,5 +1,4 @@
 import Icon from '@/components/icon';
-import { useAppSelector } from '@/hooks/store';
 import { Button, Dropdown, MenuProps } from 'antd';
 import { ThemeProvider } from 'antd-style';
 import type React from 'react';
@@ -28,23 +27,20 @@ const items: MenuProps['items'] = [
 ];
 
 const LanguageDropdown: React.FC = () => {
-  const { themeMode } = useAppSelector((state) => state.app);
   return (
-    <ThemeProvider themeMode={themeMode}>
-      <Dropdown
-        menu={{
-          items,
-        }}
-        trigger={['click']}
-        placement="bottomRight"
-      >
-        <div>
-          <ThemeProvider themeMode="dark">
-            <Button type="text" icon={<Icon name="languages" />} />
-          </ThemeProvider>
-        </div>
-      </Dropdown>
-    </ThemeProvider>
+    <Dropdown
+      menu={{
+        items,
+      }}
+      trigger={['click']}
+      placement="bottomRight"
+    >
+      <div>
+        <ThemeProvider themeMode="dark">
+          <Button type="text" icon={<Icon name="languages" />} />
+        </ThemeProvider>
+      </div>
+    </Dropdown>
   );
 };
 

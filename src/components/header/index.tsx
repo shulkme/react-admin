@@ -12,7 +12,7 @@ import type React from 'react';
 const Header: React.FC = () => {
   const { styles } = useStyles();
   return (
-    <ThemeProvider themeMode="dark">
+    <>
       <Layout.Header className={styles.ghost} />
       <Layout.Header className={styles.root}>
         <Row
@@ -28,18 +28,20 @@ const Header: React.FC = () => {
           }}
         >
           <Col>
-            <Space align="center">
-              <Avatar shape="square" src="/favicon.png" />
-              <Typography.Title
-                level={5}
-                style={{
-                  whiteSpace: 'nowrap',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {import.meta.env.VITE_APP_NAME}
-              </Typography.Title>
-            </Space>
+            <ThemeProvider themeMode="dark">
+              <Space align="center">
+                <Avatar shape="square" src="/favicon.png" />
+                <Typography.Title
+                  level={5}
+                  style={{
+                    whiteSpace: 'nowrap',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {import.meta.env.VITE_APP_NAME}
+                </Typography.Title>
+              </Space>
+            </ThemeProvider>
           </Col>
           <Col
             style={{
@@ -61,7 +63,7 @@ const Header: React.FC = () => {
           </Col>
         </Row>
       </Layout.Header>
-    </ThemeProvider>
+    </>
   );
 };
 

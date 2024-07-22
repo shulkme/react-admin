@@ -3,7 +3,7 @@ import type React from 'react';
 
 const AutomationCard: React.FC = () => {
   return (
-    <Card bordered={false}>
+    <Card bordered={false} style={{ height: '100%' }}>
       <Row gutter={16} justify="space-between">
         <Col xs={24} sm={16} md={18} xl={16}>
           <Space direction="vertical">

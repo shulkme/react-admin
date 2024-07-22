@@ -2,6 +2,7 @@ import Icon from '@/components/icon';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { appActions } from '@/stores/slices/app';
 import { Button, Tooltip } from 'antd';
+import { ThemeProvider } from 'antd-style';
 import type React from 'react';
 
 const ThemeModeButton: React.FC = () => {
@@ -17,13 +18,15 @@ const ThemeModeButton: React.FC = () => {
   };
 
   return (
-    <Tooltip title={`Toggle ${themeMode === 'dark' ? 'light' : 'dark'} mode`}>
-      <Button
-        type="text"
-        icon={<Icon name={themeMode === 'dark' ? 'sun' : 'moon'} />}
-        onClick={onClick}
-      />
-    </Tooltip>
+    <ThemeProvider themeMode="dark">
+      <Tooltip title={`Toggle ${themeMode === 'dark' ? 'light' : 'dark'} mode`}>
+        <Button
+          type="text"
+          icon={<Icon name={themeMode === 'dark' ? 'sun' : 'moon'} />}
+          onClick={onClick}
+        />
+      </Tooltip>
+    </ThemeProvider>
   );
 };
 

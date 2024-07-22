@@ -42,7 +42,6 @@ const items: MenuProps['items'] = [
 ];
 
 const AvatarDropdown: React.FC = () => {
-  const { themeMode } = useAppSelector((state) => state.app);
   const { avatar, loading } = useAppSelector((state) => state.user);
 
   const navigate = useNavigate();
@@ -60,33 +59,27 @@ const AvatarDropdown: React.FC = () => {
   };
 
   return (
-    <ThemeProvider themeMode={themeMode}>
-      <Dropdown
-        placement="bottomRight"
-        trigger={['click']}
-        menu={{
-          items,
-          onClick: onMenuClick,
-        }}
-        overlayStyle={{
-          minWidth: 200,
-        }}
-      >
-        <div>
-          <ThemeProvider themeMode="dark">
-            {loading ? (
-              <Spin />
-            ) : (
-              <Avatar
-                src={avatar}
-                shape="square"
-                style={{ cursor: 'pointer' }}
-              />
-            )}
-          </ThemeProvider>
-        </div>
-      </Dropdown>
-    </ThemeProvider>
+    <Dropdown
+      placement="bottomRight"
+      trigger={['click']}
+      menu={{
+        items,
+        onClick: onMenuClick,
+      }}
+      overlayStyle={{
+        minWidth: 200,
+      }}
+    >
+      <div>
+        <ThemeProvider themeMode="dark">
+          {loading ? (
+            <Spin />
+          ) : (
+            <Avatar src={avatar} shape="square" style={{ cursor: 'pointer' }} />
+          )}
+        </ThemeProvider>
+      </div>
+    </Dropdown>
   );
 };
 

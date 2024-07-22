@@ -113,7 +113,7 @@ const steps: StepType[] = [
 const StepTabs: React.FC = () => {
   const { styles } = useStyles();
 
-  const [activeKey, setActiveKey] = useState<string[]>([steps[0]['key']]);
+  const [activeKey, setActiveKey] = useState<string[]>(['0']);
 
   const onChange: CollapseProps['onChange'] = (key) => {
     if (isArray(key) && key.length > 0) {
@@ -153,7 +153,7 @@ const StepTabs: React.FC = () => {
           </Col>
           <Col xs={24} lg={8} xl={6}>
             <div style={{ marginBlockStart: -16 }}>
-              <Image width={200} preview={false} src={record.cover} />
+              <Image height={128} preview={false} src={record.cover} />
             </div>
           </Col>
         </Row>
@@ -170,7 +170,7 @@ const StepTabs: React.FC = () => {
       bordered={false}
       accordion
       onChange={onChange}
-      items={[...steps.map((step) => getStepItem(step))]}
+      items={steps.map((step) => getStepItem(step))}
     />
   );
 };
