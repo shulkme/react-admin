@@ -21,7 +21,7 @@ const SecurityPage: React.FC = () => {
     <PageContainer size="middle" title="Security">
       <Form layout="vertical">
         <Space size="large" direction="vertical" style={{ display: 'flex' }}>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Passkeys</Title>
@@ -44,7 +44,7 @@ const SecurityPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Password</Title>
@@ -65,7 +65,7 @@ const SecurityPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Secondary email</Title>
@@ -89,7 +89,7 @@ const SecurityPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Two-step authentication</Title>
@@ -138,7 +138,7 @@ const SecurityPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Login device</Title>

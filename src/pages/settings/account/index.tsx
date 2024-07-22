@@ -24,7 +24,14 @@ const { Title, Text, Link, Paragraph } = Typography;
 const AccountPage: React.FC = () => {
   return (
     <PageContainer size="middle" title="Account management">
-      <Form layout="vertical">
+      <Form
+        initialValues={{
+          language: 'en',
+          timezone: '8',
+          prefix: '86',
+        }}
+        layout="vertical"
+      >
         <Space size="large" direction="vertical" style={{ display: 'flex' }}>
           <Alert
             type="info"
@@ -33,7 +40,7 @@ const AccountPage: React.FC = () => {
             showIcon
             closable
           />
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Details</Title>
@@ -45,31 +52,35 @@ const AccountPage: React.FC = () => {
             </Col>
             <Col xs={24} lg={16}>
               <Card bordered={false}>
-                <Form.Item>
+                <Form.Item name="avatar">
                   <Space align="center" size="middle">
                     <Avatar shape="square" icon={<Icon name="user-round" />} />
                     <Button>Upload photo</Button>
                   </Space>
                 </Form.Item>
                 <Divider />
-                <Form.Item noStyle>
-                  <Row gutter={16}>
-                    <Col xs={24} md={12} lg={24} xl={12}>
-                      <Form.Item label={<Text strong>First name</Text>}>
-                        <Input placeholder="Please enter first name" />
-                      </Form.Item>
-                    </Col>
-                    <Col xs={24} md={12} lg={24} xl={12}>
-                      <Form.Item label={<Text strong>Last name</Text>}>
-                        <Input placeholder="Please enter last name" />
-                      </Form.Item>
-                    </Col>
-                  </Row>
-                </Form.Item>
+                <Row gutter={16}>
+                  <Col xs={24} md={12} lg={24} xl={12}>
+                    <Form.Item
+                      name="first_name"
+                      label={<Text strong>First name</Text>}
+                    >
+                      <Input placeholder="Please enter first name" />
+                    </Form.Item>
+                  </Col>
+                  <Col xs={24} md={12} lg={24} xl={12}>
+                    <Form.Item
+                      name="last_name"
+                      label={<Text strong>Last name</Text>}
+                    >
+                      <Input placeholder="Please enter last name" />
+                    </Form.Item>
+                  </Col>
+                </Row>
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Login account</Title>
@@ -99,7 +110,7 @@ const AccountPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Quick login</Title>
@@ -182,7 +193,7 @@ const AccountPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Contact information</Title>
@@ -194,24 +205,28 @@ const AccountPage: React.FC = () => {
             </Col>
             <Col xs={24} lg={16}>
               <Card bordered={false}>
-                <Form.Item label={<Text strong>Contact email</Text>}>
-                  <Row gutter={16}>
-                    <Col xs={24} md={12} lg={24} xl={12}>
+                <Row gutter={16}>
+                  <Col xs={24} md={12} lg={24} xl={12}>
+                    <Form.Item
+                      name="email"
+                      label={<Text strong>Contact email</Text>}
+                    >
                       <Input placeholder="Please enter contact email" />
-                    </Col>
-                  </Row>
-                </Form.Item>
+                    </Form.Item>
+                  </Col>
+                </Row>
                 <Form.Item
+                  name="phone"
                   label={<Text strong>Contact mobile phone number</Text>}
                 >
                   <Row gutter={16}>
                     <Col xs={24} md={12} lg={24} xl={12}>
-                      <Form.Item noStyle>
+                      <Form.Item name="number" noStyle>
                         <Input
                           placeholder="Please enter phone number"
                           addonBefore={
                             <Form.Item name="prefix" noStyle>
-                              <Select defaultValue="86" style={{ width: 70 }}>
+                              <Select style={{ width: 70 }}>
                                 <Select.Option value="86">+86</Select.Option>
                                 <Select.Option value="87">+87</Select.Option>
                               </Select>
@@ -221,7 +236,7 @@ const AccountPage: React.FC = () => {
                       </Form.Item>
                     </Col>
                     <Col xs={24} md={12} lg={24} xl={12}>
-                      <Form.Item noStyle>
+                      <Form.Item name="verification_code" noStyle>
                         <Input
                           placeholder="Enter confirmation code"
                           suffix={<Link strong>Send verification code</Link>}
@@ -233,7 +248,7 @@ const AccountPage: React.FC = () => {
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Account language</Title>
@@ -245,23 +260,23 @@ const AccountPage: React.FC = () => {
             </Col>
             <Col xs={24} lg={16}>
               <Card bordered={false}>
-                <Form.Item label={<Text strong>Account language</Text>}>
-                  <Row gutter={16}>
-                    <Col xs={24} md={12} lg={24} xl={12}>
-                      <Select
-                        placeholder="Select your language"
-                        defaultValue="en"
-                      >
+                <Row gutter={16}>
+                  <Col xs={24} md={12} lg={24} xl={12}>
+                    <Form.Item
+                      name="language"
+                      label={<Text strong>Account language</Text>}
+                    >
+                      <Select placeholder="Select your language">
                         <Select.Option value="en">English</Select.Option>
                         <Select.Option value="zh-CN">简体中文</Select.Option>
                       </Select>
-                    </Col>
-                  </Row>
-                </Form.Item>
+                    </Form.Item>
+                  </Col>
+                </Row>
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>Timezone</Title>
@@ -273,25 +288,25 @@ const AccountPage: React.FC = () => {
             </Col>
             <Col xs={24} lg={16}>
               <Card bordered={false}>
-                <Form.Item label={<Text strong>Timezone</Text>}>
-                  <Row gutter={16}>
-                    <Col xs={24} md={12} lg={24} xl={12}>
-                      <Select
-                        placeholder="Select your timezone"
-                        defaultValue="8"
-                      >
+                <Row gutter={16}>
+                  <Col xs={24} md={12} lg={24} xl={12}>
+                    <Form.Item
+                      name="timezone"
+                      label={<Text strong>Timezone</Text>}
+                    >
+                      <Select placeholder="Select your timezone">
                         <Select.Option value="8">
                           (GMT+08:00) Beijing
                         </Select.Option>
                         <Select.Option value="0">(GMT+00:00) UTC</Select.Option>
                       </Select>
-                    </Col>
-                  </Row>
-                </Form.Item>
+                    </Form.Item>
+                  </Col>
+                </Row>
               </Card>
             </Col>
           </Row>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
                 <Title level={4}>User agreement and privacy policy</Title>

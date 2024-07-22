@@ -8,7 +8,7 @@ import { userActions } from '@/stores/slices/user';
 import { useRequest } from 'ahooks';
 import { Layout } from 'antd';
 import React from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useNavigate } from 'react-router-dom';
 
 const ProLayout: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -43,23 +43,26 @@ const ProLayout: React.FC = () => {
   if (loading) return <PageLoading />;
 
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Header />
-      <Layout hasSider>
-        <Sidebar />
-        <Layout.Content
-          style={{
-            padding: 32,
-          }}
-        >
-          <Outlet />
-        </Layout.Content>
+    <>
+      <ScrollRestoration />
+      <Layout
+        style={{
+          minHeight: '100vh',
+        }}
+      >
+        <Header />
+        <Layout hasSider>
+          <Sidebar />
+          <Layout.Content
+            style={{
+              padding: 32,
+            }}
+          >
+            <Outlet />
+          </Layout.Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   );
 };
 

@@ -7,6 +7,7 @@ const SearchBar: React.FC = () => {
   return (
     <ThemeProvider themeMode="dark">
       <Input
+        name="global_search"
         variant="filled"
         prefix={<Icon name="search" />}
         placeholder="Search..."

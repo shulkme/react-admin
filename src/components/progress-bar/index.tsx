@@ -1,6 +1,6 @@
 import NProgress from 'nprogress';
-import './index.css';
 import React, { useEffect } from 'react';
+import './index.css';
 
 const NProgressBar: React.FC = () => {
   // url转换
@@ -125,8 +125,8 @@ const NProgressBar: React.FC = () => {
       };
     })((window as Window).history);
 
-    window.addEventListener('popstate', handleHide);
     document.addEventListener('click', handleClick);
+    window.addEventListener('popstate', handleHide);
     window.addEventListener('pagehide', handleHide);
 
     return (): void => {
