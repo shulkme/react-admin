@@ -1,6 +1,6 @@
 import { getProfile } from '@/apis/user';
 import Header from '@/components/header';
-import PageLoading from '@/components/page-loading';
+import LayoutLoading from '@/components/layout-loading';
 import Sidebar from '@/components/sidebar';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { LOGIN_ROUTE } from '@/router/routes';
@@ -40,7 +40,7 @@ const ProLayout: React.FC = () => {
   });
 
   // 加载状态
-  if (loading) return <PageLoading />;
+  if (loading) return <LayoutLoading />;
 
   return (
     <>
