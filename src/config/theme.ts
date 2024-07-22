@@ -53,7 +53,7 @@ const theme: ThemeConfig = {
     },
     Alert: {
       withDescriptionIconSize: 14,
-      withDescriptionPadding: '8px 12px',
+      withDescriptionPadding: '12px 16px',
       fontSizeLG: 14,
     },
   },

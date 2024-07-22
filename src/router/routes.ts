@@ -106,7 +106,7 @@ const routes: RouteObjectType[] = [
                 name: 'Security',
                 path: 'security',
                 fullPath: '/settings/security',
-                component: '/pages/temp',
+                component: '/pages/settings/security',
               },
               {
                 key: 'pages.settings.company',

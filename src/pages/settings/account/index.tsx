@@ -14,7 +14,6 @@ import {
   Select,
   Space,
   Switch,
-  Table,
   Tag,
   Typography,
 } from 'antd';
@@ -37,6 +36,42 @@ const AccountPage: React.FC = () => {
           <Row gutter={[32, 32]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
+                <Title level={4}>Details</Title>
+                <Paragraph type="secondary">
+                  Your personal image information is used for quick display of
+                  the current application.
+                </Paragraph>
+              </Space>
+            </Col>
+            <Col xs={24} lg={16}>
+              <Card bordered={false}>
+                <Form.Item>
+                  <Space align="center" size="middle">
+                    <Avatar shape="square" icon={<Icon name="user-round" />} />
+                    <Button>Upload photo</Button>
+                  </Space>
+                </Form.Item>
+                <Divider />
+                <Form.Item noStyle>
+                  <Row gutter={16}>
+                    <Col xs={24} md={12} lg={24} xl={12}>
+                      <Form.Item label={<Text strong>First name</Text>}>
+                        <Input placeholder="Please enter first name" />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} md={12} lg={24} xl={12}>
+                      <Form.Item label={<Text strong>Last name</Text>}>
+                        <Input placeholder="Please enter last name" />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Form.Item>
+              </Card>
+            </Col>
+          </Row>
+          <Row gutter={[32, 32]}>
+            <Col xs={24} lg={8}>
+              <Space direction="vertical">
                 <Title level={4}>Login account</Title>
                 <Paragraph type="secondary">
                   The only login identity of your account. You can also use
@@ -50,22 +85,15 @@ const AccountPage: React.FC = () => {
                 <Row align="middle">
                   <Col flex="auto">
                     <Space align="center">
-                      <Paragraph strong>Current login account</Paragraph>
-                      <Tag
-                        color="success"
-                        icon={<Icon name="check" />}
-                        bordered={false}
-                      >
+                      <Text strong>Current login account</Text>
+                      <Tag color="success" icon={<Icon name="check" />}>
                         Verified
                       </Tag>
                     </Space>
                     <Paragraph type="secondary">username@example.com</Paragraph>
                   </Col>
                   <Col flex="none">
-                    <Space>
-                      <Button>Change login account</Button>
-                      <Button>Reset password</Button>
-                    </Space>
+                    <Button>Change login account</Button>
                   </Col>
                 </Row>
               </Card>
@@ -236,46 +264,30 @@ const AccountPage: React.FC = () => {
           <Row gutter={[32, 32]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">
-                <Title level={4}>Login device</Title>
+                <Title level={4}>Timezone</Title>
                 <Paragraph type="secondary">
-                  Records history devices logged in to your Admin. If any of
-                  these entries are unusual or suspicious, log out and contact
-                  us immediately.
+                  This is the timezone for your account. To set the timezone for
+                  your admin, go to the General section in Settings.
                 </Paragraph>
               </Space>
             </Col>
             <Col xs={24} lg={16}>
               <Card bordered={false}>
-                <Space direction="vertical" size="middle">
-                  <Typography>
-                    <Paragraph strong>Logged in devices</Paragraph>
-                    <Paragraph type="secondary">
-                      Records only recent 10 devices logged in to your SHOPLINE
-                      Admin
-                    </Paragraph>
-                  </Typography>
-                  <Table
-                    size="small"
-                    bordered
-                    columns={[
-                      {
-                        title: 'Device/IP',
-                      },
-                      {
-                        title: 'Time',
-                      },
-                      {
-                        title: 'Location',
-                      },
-                      {
-                        title: 'Status',
-                      },
-                      {
-                        title: 'Operate',
-                      },
-                    ]}
-                  />
-                </Space>
+                <Form.Item label={<Text strong>Timezone</Text>}>
+                  <Row gutter={16}>
+                    <Col xs={24} md={12} lg={24} xl={12}>
+                      <Select
+                        placeholder="Select your timezone"
+                        defaultValue="8"
+                      >
+                        <Select.Option value="8">
+                          (GMT+08:00) Beijing
+                        </Select.Option>
+                        <Select.Option value="0">(GMT+00:00) UTC</Select.Option>
+                      </Select>
+                    </Col>
+                  </Row>
+                </Form.Item>
               </Card>
             </Col>
           </Row>

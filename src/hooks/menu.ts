@@ -27,7 +27,7 @@ const route2menu = (
     .map((route) => {
       const menu: MenuObject = {
         ...pick(route, ['type', 'key']),
-        icon: (route?.icon || 'x') as IconName,
+        icon: route?.icon as IconName,
         path: route.fullPath || route.path,
         label: route?.name,
       };
