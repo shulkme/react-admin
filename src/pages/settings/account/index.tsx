@@ -15,6 +15,7 @@ import {
   Space,
   Switch,
   Table,
+  Tag,
   Typography,
 } from 'antd';
 import type React from 'react';
@@ -31,6 +32,7 @@ const AccountPage: React.FC = () => {
             message="You agree to share cookies"
             description="We collects cookie data. The data you share will help us improve our products and services, and offer you with personalized promotions and discounts. If you don't wish to share your data, change your settings at 'User Agreement and Private Policy.'"
             showIcon
+            closable
           />
           <Row gutter={[32, 32]}>
             <Col xs={24} lg={8}>
@@ -47,7 +49,16 @@ const AccountPage: React.FC = () => {
               <Card bordered={false}>
                 <Row align="middle">
                   <Col flex="auto">
-                    <Paragraph strong>Current login account</Paragraph>
+                    <Space align="center">
+                      <Paragraph strong>Current login account</Paragraph>
+                      <Tag
+                        color="success"
+                        icon={<Icon name="check" />}
+                        bordered={false}
+                      >
+                        Verified
+                      </Tag>
+                    </Space>
                     <Paragraph type="secondary">username@example.com</Paragraph>
                   </Col>
                   <Col flex="none">

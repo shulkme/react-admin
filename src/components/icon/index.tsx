@@ -4,47 +4,38 @@
 // | 通常情况下，图标内容及数量随业务固定，所以推荐本地化动态加载，不建议完全导入第三方图标库，仅当后端指定图标时，可全部导入
 // +---------------------------------
 
+import localIcons from '@/icons';
 import { cx, useTheme } from 'antd-style';
-import { mapKeys } from 'lodash';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
-import React, { Suspense, lazy, type ComponentType } from 'react';
-
-// 图标组件类型断言，解决第三方类型冲突
-type IconComponent = () => Promise<{
-  default: ComponentType<React.SVGProps<SVGSVGElement>>;
-}>;
+import React, { Suspense, lazy } from 'react';
 
 type LazyComponent = React.LazyExoticComponent<
   React.ComponentType<React.SVGProps<SVGSVGElement>>
 >;
 
-export interface IconProps
-  extends Omit<React.SVGProps<SVGSVGElement>, 'name' | 'ref'> {
-  name: keyof typeof icons;
-  size?: string | number;
-}
-
-// 本地导入，推荐写法
-const modules = import.meta.glob('../../icons/**.tsx');
-const local_icons = mapKeys(modules, (_, key) => {
-  return key.match(/[^/]+(?=\.\w+$)/)?.[0] || key;
-});
-
 // 图标集合
 const icons = {
   ...dynamicIconImports,
-  ...local_icons,
+  ...localIcons,
   // 或者，
   // 'xxx': () => import('@/icons/xxx'),
-} as Record<string, IconComponent>;
+};
+
+export type IconName = keyof typeof icons;
+
+export interface IconProps
+  extends Omit<React.SVGProps<SVGSVGElement>, 'name' | 'ref'> {
+  name: IconName;
+  size?: string | number;
+}
 
 // 图标懒加载
-const LazyIcons: Record<string, LazyComponent> = Object.keys(icons).reduce(
+const LazyIcons: Record<IconName, LazyComponent> = Object.keys(icons).reduce(
   (pre, cur) => {
     pre[cur] = lazy(icons[cur]);
     return pre;
   },
-  {} as Record<string, LazyComponent>,
+  {} as Record<IconName, LazyComponent>,
 );
 
 const _Icon: React.FC<IconProps> = ({
