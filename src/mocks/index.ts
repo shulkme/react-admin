@@ -1,6 +1,7 @@
 import request from '@/apis';
 import authMock from '@/mocks/resources/auth';
 import postMock from '@/mocks/resources/post';
+import productMock from '@/mocks/resources/product';
 import userMock from '@/mocks/resources/user';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -20,7 +21,7 @@ const mocker = new Mocker(request, {
 // 仅在开发模式注册
 if (process.env.NODE_ENV === 'development') {
   // 注册模拟器
-  mocker.mock(authMock).mock(userMock).mock(postMock);
+  mocker.mock(authMock).mock(userMock).mock(postMock).mock(productMock);
 }
 
 export default mocker;

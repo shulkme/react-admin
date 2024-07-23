@@ -3,10 +3,10 @@ import PageContainer from '@/components/page-container';
 import { usePagination } from 'ahooks';
 import { Button, Col, Input, List, Row, Select, Space, Typography } from 'antd';
 import type React from 'react';
-import PostCard from './components/post-card';
+import ProductCard from './components/product-card';
 import { getList } from './service';
 
-const Posts: React.FC = () => {
+const CardGrid: React.FC = () => {
   const { loading, data, pagination } = usePagination(
     async ({ current, pageSize }) => {
       const res = await getList({ page: current, pageSize });
@@ -22,11 +22,10 @@ const Posts: React.FC = () => {
       },
     },
   );
-
   return (
     <PageContainer
       size="large"
-      title="All Posts"
+      title="Card Grid"
       extras={[
         <Button key="create" type="primary" icon={<Icon name="plus" />}>
           New
@@ -34,14 +33,12 @@ const Posts: React.FC = () => {
       ]}
     >
       <Space direction="vertical" size="large">
-        <Row justify="space-between" align="middle">
+        <Row justify="space-between" align="middle" gutter={16}>
           <Col>
-            <Typography.Title level={4}>
-              {!loading && `Total ${pagination.total.toLocaleString()} items`}
-            </Typography.Title>
+            <Typography.Title level={5}>Total 1,000 items</Typography.Title>
           </Col>
           <Col>
-            <Space size="middle">
+            <Space align="center" size="middle">
               <Input prefix={<Icon name="search" />} placeholder="Search" />
               <Select
                 style={{ width: 160 }}
@@ -79,19 +76,19 @@ const Posts: React.FC = () => {
           dataSource={data?.list || []}
           grid={{
             xs: 1,
-            sm: 1,
-            md: 2,
-            lg: 2,
-            xl: 3,
-            xxl: 4,
+            sm: 2,
+            md: 3,
+            lg: 4,
+            xl: 5,
+            xxl: 6,
           }}
           pagination={{ ...pagination, showSizeChanger: false }}
           style={{
-            margin: -12,
+            margin: -8,
           }}
           renderItem={(record) => (
-            <div style={{ height: '100%', padding: 12 }}>
-              <PostCard {...record} />
+            <div style={{ height: '100%', padding: 8 }}>
+              <ProductCard {...record} />
             </div>
           )}
         />
@@ -100,4 +97,4 @@ const Posts: React.FC = () => {
   );
 };
 
-export default Posts;
+export default CardGrid;

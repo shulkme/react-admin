@@ -1,5 +1,5 @@
 import Icon from '@/components/icon';
-import { PostRecord } from '@/pages/grid/posts/types';
+import { ProductRecord } from '@/pages/grid/card/types.ts';
 import { Button, Card, Image, Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import type React from 'react';
@@ -15,39 +15,47 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
       display: block;
       width: 100%;
       height: 0;
-      padding-bottom: 50%;
+      padding-bottom: 100%;
       overflow: hidden;
       border-radius: ${token.borderRadius}px;
-      > img {
+      .${prefixCls}-image-img {
+        display: block;
+        width: 100%;
+        height: 100%;
         position: absolute;
         inset: 0;
         object-fit: cover;
+        object-position: center;
       }
+    `,
+    intro: css`
+      padding: 8px;
     `,
     title: css`
       &.${prefixCls}-typography {
-        margin: 16px 0 8px;
-        line-height: 1.25;
+        margin: 8px 0;
         height: 20px;
+        line-height: 20px;
       }
     `,
     desc: css`
       &.${prefixCls}-typography {
-        line-height: 1.14;
-        height: 32px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
       }
     `,
   };
 });
 
-const PostCard: React.FC<PostRecord> = (record) => {
+const ProductCard: React.FC<ProductRecord> = (record) => {
   const { styles } = useStyles();
   return (
     <Card
       bordered={false}
       styles={{
         body: {
-          padding: 16,
+          padding: 8,
         },
       }}
       className={styles.root}
@@ -67,21 +75,16 @@ const PostCard: React.FC<PostRecord> = (record) => {
           ),
         }}
       />
-      <Title level={5} className={styles.title} ellipsis>
-        {record.title}
-      </Title>
-      <Paragraph
-        className={styles.desc}
-        type="secondary"
-        ellipsis={{ rows: 2 }}
-      >
-        {record.description}
-      </Paragraph>
-      <Button block icon={<Icon name="pen-line" />}>
-        Edit
-      </Button>
+      <div className={styles.intro}>
+        <Title level={5} className={styles.title} ellipsis>
+          {record.title}
+        </Title>
+        <Paragraph className={styles.desc} type="secondary">
+          $ {record.price.toLocaleString()}
+        </Paragraph>
+      </div>
     </Card>
   );
 };
 
-export default PostCard;
+export default ProductCard;
