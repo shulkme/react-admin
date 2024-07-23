@@ -1,15 +1,11 @@
-import Icon from '@/components/icon';
+import Icon, { IconName } from '@/components/icon';
+import localIcons from '@/icons';
 import { Card, Col, Row, Typography } from 'antd';
-import { keys } from 'lodash';
 import type React from 'react';
 
 const { Paragraph, Text } = Typography;
 
 const LocalIcon: React.FC = () => {
-  const modules = import.meta.glob('../../../icons/**.tsx');
-  const local_icons = keys(modules).map((key) => {
-    return key.match(/[^/]+(?=\.\w+$)/)?.[0] || key;
-  });
   return (
     <Card bordered={false} title="Use local icons">
       <Typography>
@@ -34,7 +30,7 @@ const LocalIcon: React.FC = () => {
         <Paragraph>These are the local icons below:</Paragraph>
       </Typography>
       <Row gutter={[16, 16]}>
-        {local_icons.map((name, index) => (
+        {Object.entries(localIcons).map(([name], index) => (
           <Col key={index} xs={12} sm={8} md={6} lg={4}>
             <Card
               hoverable
@@ -51,7 +47,7 @@ const LocalIcon: React.FC = () => {
                 height: '100%',
               }}
             >
-              <Icon name={name} size={32} />
+              <Icon name={name as IconName} size={32} />
               <Typography.Text
                 ellipsis={{
                   tooltip: {

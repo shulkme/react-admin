@@ -64,8 +64,8 @@ export const GlobalStyles = createGlobalStyle(({ theme }) => {
       }
     }
 
-    .${prefix}-alert.${prefix}-alert-with-description {
-      .${prefix}-alert-icon {
+    .${prefix}-alert {
+      &.${prefix}-alert-with-description.${prefix}-alert-icon {
         margin-block: 3px;
       }
       .${prefix}-alert-message {
