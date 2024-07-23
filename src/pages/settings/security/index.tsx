@@ -20,7 +20,7 @@ const SecurityPage: React.FC = () => {
   return (
     <PageContainer size="middle" title="Security">
       <Form layout="vertical">
-        <Space size="large" direction="vertical" style={{ display: 'flex' }}>
+        <Space size="large" direction="vertical">
           <Row gutter={[32, 16]}>
             <Col xs={24} lg={8}>
               <Space direction="vertical">

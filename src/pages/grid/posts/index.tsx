@@ -33,7 +33,7 @@ const Posts: React.FC = () => {
         </Button>,
       ]}
     >
-      <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+      <Space direction="vertical" size="large">
         <Row justify="space-between" align="middle">
           <Col>
             <Typography.Title level={4}>

@@ -85,7 +85,7 @@ const FilterForm: React.FC = () => {
           borderBottom: `1px solid ${theme.colorBorderSecondary}`,
         }}
       >
-        <Space direction="vertical" style={{ display: 'flex' }}>
+        <Space direction="vertical">
           <Row gutter={16}>
             <Col flex="auto">
               <Form.Item noStyle>

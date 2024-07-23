@@ -73,7 +73,7 @@ const SegmentTable: React.FC = () => {
       title="Segment Table"
       description="Save multi condition queries as segments for easy tracking and analysis of queries, such as user profiles."
     >
-      <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+      <Space direction="vertical" size="large">
         <Card bordered={false} styles={{ body: { padding: 0 } }}>
           <FilterForm />
         </Card>

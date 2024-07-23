@@ -73,7 +73,7 @@ const QueryTable: React.FC = () => {
       title="Query Table"
       description="Used for merging queries of multiple fields in scenarios with known fields."
     >
-      <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+      <Space direction="vertical" size="large">
         <Card
           bordered={false}
           styles={{

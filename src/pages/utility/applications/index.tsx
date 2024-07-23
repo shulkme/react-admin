@@ -124,7 +124,7 @@ const Apps: React.FC = () => {
         </Button>,
       ]}
     >
-      <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+      <Space direction="vertical" size="large">
         <Card
           bordered={false}
           title="Installed"

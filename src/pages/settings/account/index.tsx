@@ -32,7 +32,7 @@ const AccountPage: React.FC = () => {
         }}
         layout="vertical"
       >
-        <Space size="large" direction="vertical" style={{ display: 'flex' }}>
+        <Space size="large" direction="vertical">
           <Alert
             type="info"
             message="You agree to share cookies"
@@ -261,7 +261,7 @@ const AccountPage: React.FC = () => {
             <Col xs={24} lg={16}>
               <Card bordered={false}>
                 <Row gutter={16}>
-                  <Col xs={24} md={12} lg={24} xl={12}>
+                  <Col xs={24} sm={12} md={8} lg={12} xl={8}>
                     <Form.Item
                       name="language"
                       label={<Text strong>Account language</Text>}
@@ -289,7 +289,7 @@ const AccountPage: React.FC = () => {
             <Col xs={24} lg={16}>
               <Card bordered={false}>
                 <Row gutter={16}>
-                  <Col xs={24} md={12} lg={24} xl={12}>
+                  <Col xs={24} sm={12} md={8} lg={12} xl={8}>
                     <Form.Item
                       name="timezone"
                       label={<Text strong>Timezone</Text>}
