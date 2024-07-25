@@ -17,9 +17,6 @@ const CardGrid: React.FC = () => {
     },
     {
       defaultPageSize: 12,
-      onSuccess: (data) => {
-        console.log(data);
-      },
     },
   );
   return (
@@ -70,28 +67,57 @@ const CardGrid: React.FC = () => {
             </Space>
           </Col>
         </Row>
-        <List
-          rowKey="id"
-          loading={loading}
-          dataSource={data?.list || []}
-          grid={{
-            xs: 1,
-            sm: 2,
-            md: 3,
-            lg: 4,
-            xl: 5,
-            xxl: 6,
-          }}
-          pagination={{ ...pagination, showSizeChanger: false }}
-          style={{
-            margin: -8,
-          }}
-          renderItem={(record) => (
-            <div style={{ height: '100%', padding: 8 }}>
-              <ProductCard {...record} />
-            </div>
-          )}
-        />
+        {loading ? (
+          <>
+            <List
+              rowKey="index"
+              dataSource={Array.from({ length: 12 }).map((_, index) => ({
+                index,
+              }))}
+              grid={{
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 5,
+                xxl: 6,
+              }}
+              style={{
+                margin: -8,
+              }}
+              renderItem={(_, index) => (
+                <div style={{ height: '100%', padding: 8 }} key={index}>
+                  <ProductCard />
+                </div>
+              )}
+            />
+          </>
+        ) : (
+          <>
+            <List
+              rowKey="id"
+              // loading={loading}
+              dataSource={data?.list || []}
+              grid={{
+                xs: 1,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 5,
+                xxl: 6,
+              }}
+              pagination={{ ...pagination, showSizeChanger: false }}
+              style={{
+                margin: -8,
+              }}
+              renderItem={(record, index) => (
+                <div style={{ height: '100%', padding: 8 }} key={index}>
+                  <ProductCard record={record} />
+                </div>
+              )}
+            />
+          </>
+        )}
       </Space>
     </PageContainer>
   );

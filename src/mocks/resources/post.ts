@@ -1,8 +1,7 @@
 import { Mocker } from '@/mocks';
-import { PostRecord } from '@/pages/grid/posts/types';
 import { sampleSize } from 'lodash';
 
-const posts: PostRecord[] = [
+const posts = [
   {
     id: 1,
     title: 'How to serve coffee at the office the proper way',
