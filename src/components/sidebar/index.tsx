@@ -2,10 +2,8 @@ import Icon from '@/components/icon';
 import useStyles from '@/components/sidebar/styles';
 import useAccess from '@/hooks/access';
 import useMenu, { type MenuObject } from '@/hooks/menu';
-import { useAppSelector } from '@/hooks/store.ts';
 import asyncRoutes from '@/router/routes';
-import { Layout, Menu } from 'antd';
-import { ThemeProvider } from 'antd-style';
+import { ConfigProvider, Layout, Menu } from 'antd';
 import type { ItemType } from 'antd/es/menu/interface';
 import { isArray, pick } from 'lodash';
 import React, { useMemo, useState } from 'react';
@@ -21,7 +19,6 @@ type MenuItemType = ItemType<{
 }>;
 
 const Sidebar: React.FC = () => {
-  const { themeMode } = useAppSelector((state) => state.app);
   const [collapsed, setCollapsed] = useState(false);
   const { styles } = useStyles();
   const access = useAccess();
@@ -62,24 +59,7 @@ const Sidebar: React.FC = () => {
   const menuItems = useMemo(() => generateMenus(menus), [menus]);
 
   return (
-    <ThemeProvider
-      theme={{
-        components: {
-          Menu: {
-            iconSize: 18,
-            itemBorderRadius: 0,
-            itemMarginBlock: 0,
-            itemMarginInline: 0,
-            collapsedIconSize: 18,
-            itemHeight: 46,
-            iconMarginInlineEnd: 12,
-            groupTitleFontSize: 12,
-            padding: 24,
-          },
-        },
-      }}
-      themeMode={themeMode}
-    >
+    <>
       <Sider
         collapsed={collapsed}
         className={styles.ghost}
@@ -89,29 +69,45 @@ const Sidebar: React.FC = () => {
       />
       <Sider
         collapsed={collapsed}
-        theme="light"
         className={styles.root}
         breakpoint="lg"
         width={240}
         collapsedWidth={64}
         onCollapse={(state) => setCollapsed(state)}
       >
-        <Menu
-          className={styles.menu}
-          selectedKeys={selectedKeys}
-          openKeys={openKeys}
-          theme="light"
-          mode="inline"
-          inlineIndent={28}
-          items={menuItems}
-          _internalRenderMenuItem={(dom, props) => {
-            const { elementRef, ...reset } = dom.props;
-            return <Link to={props.path} ref={elementRef} {...reset} />;
+        <ConfigProvider
+          theme={{
+            components: {
+              Menu: {
+                iconSize: 18,
+                itemBorderRadius: 0,
+                itemMarginBlock: 0,
+                itemMarginInline: 0,
+                collapsedIconSize: 18,
+                itemHeight: 46,
+                iconMarginInlineEnd: 12,
+                groupTitleFontSize: 12,
+                padding: 24,
+              },
+            },
           }}
-          onOpenChange={(keys) => setOpenKeys(keys)}
-        />
+        >
+          <Menu
+            className={styles.menu}
+            selectedKeys={selectedKeys}
+            openKeys={openKeys}
+            mode="inline"
+            inlineIndent={28}
+            items={menuItems}
+            _internalRenderMenuItem={(dom, props) => {
+              const { elementRef, ...reset } = dom.props;
+              return <Link to={props.path} ref={elementRef} {...reset} />;
+            }}
+            onOpenChange={(keys) => setOpenKeys(keys)}
+          />
+        </ConfigProvider>
       </Sider>
-    </ThemeProvider>
+    </>
   );
 };
 

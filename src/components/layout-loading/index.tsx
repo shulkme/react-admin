@@ -91,7 +91,7 @@ const LayoutLoading: React.FC = () => {
                   height: '640px',
                 },
               }}
-            ></Card>
+            />
           </PageContainer>
         </Layout.Content>
       </Layout>

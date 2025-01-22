@@ -11,7 +11,6 @@ const useStyles = createStyles(({ css, token }) => {
       left: 0;
       right: 0;
       z-index: ${token.zIndexPopupBase};
-      padding: 0 ${token.paddingLG}px;
       line-height: 1;
     `,
   };

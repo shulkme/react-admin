@@ -4,7 +4,7 @@ import LanguageDropdown from '@/components/header/language-dropdown';
 import NoticeDrawer from '@/components/header/notice-drawer';
 import SearchBar from '@/components/header/search-bar';
 import useStyles from '@/components/header/styles';
-import ThemeModeButton from '@/components/header/theme-mode-button';
+import ThemeSwitcher from '@/components/header/theme-switcher';
 import { Avatar, Col, Layout, Row, Space, Typography } from 'antd';
 import { ThemeProvider } from 'antd-style';
 import type React from 'react';
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           <Col>
             <Space align="center" size="middle">
               <LanguageDropdown />
-              <ThemeModeButton />
+              <ThemeSwitcher />
               <FullscreenButton />
               <NoticeDrawer />
               <span />

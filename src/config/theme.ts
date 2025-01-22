@@ -5,7 +5,11 @@
 
 import type { ThemeConfig } from 'antd';
 
-const theme: ThemeConfig = {
+import { theme } from 'antd';
+
+const sharedConfig: ThemeConfig = {
+  cssVar: true, // use css variables -> var(--xxx)
+  hashed: false, // close hash
   token: {
     colorPrimary: '#2464F1',
     borderRadiusXS: 2,
@@ -16,7 +20,6 @@ const theme: ThemeConfig = {
     controlHeightSM: 28,
     controlHeight: 36,
     controlHeightLG: 44,
-    // colorTextTertiary: 'rgba(0,0,0,0.65)',
   },
   components: {
     Button: {
@@ -26,11 +29,6 @@ const theme: ThemeConfig = {
       onlyIconSize: 18,
       onlyIconSizeLG: 20,
       onlyIconSizeSM: 16,
-    },
-    Input: {
-      //inputFontSizeSM: 12,
-      //inputFontSize: 14,
-      //inputFontSizeLG: 16,
     },
     Table: {
       // 一般存放于卡片中，所以默认参照卡片容器
@@ -49,14 +47,47 @@ const theme: ThemeConfig = {
     },
     Skeleton: {
       controlHeightXS: 16,
-      //controlHeightSM: 18,
     },
     Alert: {
       withDescriptionIconSize: 14,
       withDescriptionPadding: '12px 16px',
       fontSizeLG: 14,
     },
+  }
+};
+
+const lightConfig: ThemeConfig = {
+  ...sharedConfig,
+  algorithm: theme.defaultAlgorithm,
+  components: {
+    ...sharedConfig.components,
+    Layout: {
+      headerHeight: 48,
+      headerPadding: '0 16px',
+      footerBg: '#e4ebf1',
+      headerBg: '#09121a',
+      headerColor: '#fff',
+      siderBg: '#fff',
+      bodyBg: '#e4ebf1',
+    },
   },
 };
 
-export default theme;
+const darkConfig: ThemeConfig = {
+  ...sharedConfig,
+  algorithm: theme.darkAlgorithm,
+  components: {
+    ...sharedConfig.components,
+    Layout: {
+      headerHeight: 48,
+      headerPadding: '0 16px',
+      headerBg: '#09121a',
+      headerColor: '#fff',
+      siderBg: '#141414',
+      bodyBg: '#000',
+      footerBg: '#000'
+    },
+  },
+};
+
+export { darkConfig, lightConfig };
