@@ -74,6 +74,10 @@ const Login: React.FC = () => {
         size="large"
         variant="filled"
         requiredMark={false}
+        initialValues={{
+          username: 'admin',
+          password: '123456',
+        }}
         onFinish={onFinish}
       >
         <Form.Item<FieldType>

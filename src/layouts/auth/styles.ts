@@ -5,7 +5,11 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
     root: css`
       min-height: 100vh;
     `,
-    header: css``,
+    header: css`
+      padding: ${token.paddingLG}px;
+      height: auto;
+      line-height: 1;
+    `,
     content: css`
       display: flex;
       flex-direction: column;
