@@ -1,6 +1,5 @@
-> \[!WARNING]
->
-> 部分组件及页面尚未完成，不建议应用于生产环境
+> [!TIP]  
+> 推荐使用 [Runow](https://github.com/runowjs/runow) 快速构建前端应用，包含海量模版，一键创建并运行 ▶︎
 
 <div align="center">
 
